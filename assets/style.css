@@ -9,11 +9,12 @@
 /* fonts */
 @font-face{
     font-family: 'Carme Regular';
-    src: url('/assets/fonts/Carme-Regular.ttf');
+    src: url('fonts/Carme-Regular.ttf');
 }
 
 /* base style */
 html{
+    overflow-x: hidden;
     scroll-behavior: smooth;
     padding: 0;
     margin: 0;
@@ -79,18 +80,23 @@ ul a{
     padding: 20px 20px 20px 0;
 }
 .welcome-text{
-    padding: 12px;
-    grid-column: 1/6;
-    grid-row: 1;
+    padding: 10px;
+    width: 80%;
 }
 
 .welcome-text p{
     margin-top: 8px;
 }
 .welcome-img{
-    grid-column: 6/9;
-    grid-row: 1;
+    position: absolute;
+    right: -140px;
+    top: -100px;
 }
+.welcome-img .planet{
+    width: 350px;
+    height: 350px;
+}
+
 
 #portfolio{
     margin: 0;
@@ -128,7 +134,6 @@ ul a{
 }
 
 .projects div{
-    grid-column: 1/9;
     display: flex;
     justify-content: center;
 }
@@ -157,38 +162,34 @@ ul a{
 #skills p{
     color: white;
 }
-#skills .grid div:nth-child(1){
-    grid-column: 1/4;
-    grid-row: 1;
+#skills div:nth-child(1){
     background-color: #2c0541;
     padding: 16px;
 }
-#skills .grid div:nth-child(2){
-    grid-column: 4/7;
-    grid-row: 1;
+#skills div:nth-child(2){
     background-color: #2c0541;
     padding: 16px;
 }
-#skills .grid div:nth-child(3){
-    grid-column: 7/12;
-    grid-row: 1;
+#skills div:nth-child(3){
     background-color: #2c0541;
     padding: 16px;
 }
-#skills .grid div:nth-child(4){
-    grid-column: 2/5;
-    grid-row: 2;
+#skills div:nth-child(4){
     background-color: #2c0541;
     padding: 16px;
 }
-#skills .grid div:nth-child(5){
-    grid-column: 6/9;
-    grid-row: 2;
+#skills div:nth-child(5){
     background-color: #2c0541;
     padding: 16px;
 }
 
+.socials{
+    padding: 30px;
+}
 
+.link{
+    margin: 18px;    
+}
 
 #contact{
     background-color: #1f012f;
@@ -239,76 +240,6 @@ p,li{
     font-style: italic;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-}
-
-
-
-/* for tablets */
-@media screen and (min-width: 620px ){
-    body{
-        font-size: 18px;
-    }
-}
-
-
-/* for notbebooks and laptops */
-@media screen and (min-width: 960px ){
-    body{
-        font-size: 20px;
-    }
-}
-
-
-
-/* for desktop (widescreen) */
-@media screen and (min-width: 1200px ){
-    body{
-        font-size: 22px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Spinning Planet */
 .planet-animation{
     text-align: center;
@@ -322,14 +253,11 @@ p,li{
 }
 
 .planet{
-    
     position: relative;
     background-color: transparent;
-    background-image: url("/assets/img/planet.svg");
+    background-image: url("img/planet.svg");
     border-style: none;
     border-width: 1px;
-    width: 350px;
-    height: 350px;
     margin-left: 35%;
     animation-name: rot;
     animation-timing-function: linear;
@@ -358,5 +286,59 @@ p,li{
 @keyframes rot {
     100%{
         transform: rotateZ(1turn);
+    }
+}
+
+.minor_only{
+    display: none;
+}
+
+/* for tablets */
+@media screen and (min-width: 700px ){
+    body{
+        font-size: 20px;
+    }
+    .welcome-text{
+        width: 70%;
+    }
+    .welcome-img{
+        top: -130px;
+        /* right: -150px; */
+    }
+    .welcome-img .planet{
+        width: 580px;
+        height: 580px;
+    }
+    .minor_only{
+        display: block;
+    }
+}
+
+
+/* for notbebooks and laptops */
+@media screen and (min-width: 960px ){
+    body{
+        font-size: 22px;
+    }
+    .welcome-img .planet{
+        width: 650px;
+        height: 650px;
+    }
+}
+
+
+
+/* for desktop (widescreen) */
+@media screen and (min-width: 1200px ){
+    body{
+        font-size: 24px;
+    }
+    .welcome-img .planet{
+        width: 720px;
+        height: 720px;
+    }
+    .welcome-img{
+        top: -200px;
+        right: -190px;
     }
 }
