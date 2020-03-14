@@ -162,7 +162,7 @@ ul a{
 #skills img{
     margin: 5px;
 }
-#skills div{
+.things div{
     text-align: center;
     align-items: center;
     align-content: center;
