@@ -63,18 +63,19 @@ ul a{
     margin-left: 12px;
 }
 .btn{
-    background-color: transparent;
-    border: 1px solid yellow;
-    border-radius: 15px;
-    color: yellow;
+    border-radius: 50px;
+    background: #4D2361;
+    box-shadow:  5px 5px 10px #371945, 
+             -5px -5px 10px #632d7d;
+    color: var(--text-color);
     text-decoration: none;
-    padding: 8px 70px;
-    transition: 0.5s;
+    padding: 8px 30px;
+    transition: box-shadow inset 1s;
     font-weight: 600;
 }
 .btn:hover{
-    background-color: yellow;
-    color: black;
+    box-shadow: inset 5px 5px 10px #371945, 
+    inset -5px -5px 10px #632d7d;
 }
 #welcome {
     padding: 20px 20px 20px 0;
@@ -101,8 +102,7 @@ ul a{
 #portfolio{
     margin: 0;
     padding: 0;
-    background: rgb(31,1,47);
-    background: linear-gradient(0deg, rgba(31,1,47,1) 0%, rgba(77,35,97,0.727328431372549) 100%);
+    background: var(--secondary);
 }
 
 #portfolio h3{
@@ -118,9 +118,8 @@ ul a{
 }
 
 .projects {
-    padding: 16px;
-    margin-top: 30px;
-    gap: 60px;
+    padding: 0;
+    margin: 0;
 }
 
 .projects a{
@@ -136,6 +135,13 @@ ul a{
 .projects div{
     display: flex;
     justify-content: center;
+    border-radius: 30px;
+    background: #4D2361;
+    box-shadow:  5px 5px 10px #371945, 
+             -5px -5px 10px #632d7d;
+    color: var(--text-color);
+    margin: 50px 15px;
+    padding: 20px;
 }
 .projects label{
     margin-left: 40px;
@@ -146,53 +152,48 @@ ul a{
 }
 
 #skills{
-    background-color: #1f012f;
+    background: var(--secondary);
     padding: 30px;
 }
 #skills h3{
     text-align: center;
     margin-bottom: 30px;
 }
+#skills img{
+    margin: 5px;
+}
 #skills div{
     text-align: center;
     align-items: center;
     align-content: center;
-    gap: 20px;
-}
-#skills p{
-    color: white;
-}
-#skills div:nth-child(1){
-    background-color: #2c0541;
-    padding: 16px;
-}
-#skills div:nth-child(2){
-    background-color: #2c0541;
-    padding: 16px;
-}
-#skills div:nth-child(3){
-    background-color: #2c0541;
-    padding: 16px;
-}
-#skills div:nth-child(4){
-    background-color: #2c0541;
-    padding: 16px;
-}
-#skills div:nth-child(5){
-    background-color: #2c0541;
-    padding: 16px;
+    margin: 50px 20px;
+    padding: 26px;
+    border-radius: 40px;
+    background: #4D2361;
+    box-shadow:  5px 5px 10px #371945, 
+             -5px -5px 10px #632d7d;
+    color: var(--text-color);
 }
 
 .socials{
-    padding: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.socials div{
+    border-radius: 40px;
+    background: #4D2361;
+    box-shadow:  5px 5px 10px #371945, 
+             -5px -5px 10px #632d7d;
+    color: rgb(233, 135, 152);
+    text-align: center;
+    padding: 14px;
+    margin: 40px;
 }
 
 .link{
-    margin: 18px;    
-}
-
-#contact{
-    background-color: #1f012f;
+    padding: 10px;
+    margin: 28px;    
 }
 
 #contact h3{
@@ -200,25 +201,9 @@ ul a{
     margin-bottom: 20px;;
 }
 
-#contact div{
-    text-align: left;
-    gap: 25px;
-}
-
-#contact div:nth-child(1){
-    grid-column: 2/4;
-}
-#contact div:nth-child(2){
-    grid-column: 2/4;
-}
-#contact div:nth-child(3){
-    grid-column: 2/4;
-}
-
 #about{
     padding: 40px 100px;
-    background: rgb(77,35,97);
-    background: linear-gradient(0deg, rgba(77,35,97,0.7189250700280112) 0%, rgba(31,1,47,1) 100%);
+    background: var(--secondary);
 }
 #about h3{
     text-align: center;
@@ -232,13 +217,6 @@ p,li{
     color: rgb(233, 135, 152);
 }
 
-#footer {
-    background-color: #1D0724;
-    text-align: center;
-    padding: 10px;
-    font-size: .7em;
-    font-style: italic;
-}
 
 /* Spinning Planet */
 .planet-animation{
@@ -293,6 +271,36 @@ p,li{
     display: none;
 }
 
+.mob-header{
+    display: block;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #4D2361;
+    width: 100vw;
+    height: 70px;
+}
+.mob-header ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+.mob-header li{
+    border-radius: 50px;
+    background: #4D2361;
+    box-shadow:  5px 5px 10px #371945, 
+             -5px -5px 10px #632d7d;
+    color: var(--text-color);
+    padding: 16px;
+}
+
 /* for tablets */
 @media screen and (min-width: 700px ){
     body{
@@ -324,6 +332,9 @@ p,li{
         width: 650px;
         height: 650px;
     }
+    .mob-header{
+        display: none;
+    }
 }
 
 
@@ -340,5 +351,8 @@ p,li{
     .welcome-img{
         top: -200px;
         right: -190px;
+    }
+    .mob-header{
+        display: none;
     }
 }
