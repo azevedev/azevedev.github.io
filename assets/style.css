@@ -1,7 +1,7 @@
 /* variables */
 :root{
     --primary: #FFC636;
-    --secondary: #4D2361;
+    --secondary: #110715;
     --text-color: #FFFFaa;
     --link-color: rgb(223, 201, 145);
 }
@@ -36,6 +36,23 @@ h1,h2{
     font-size: 1.4em;
 }
 
+.neo-comp{
+    background: var(--secondary);
+    box-shadow:  -2px -2px 4px rgba(255,255,255,0.1), 
+                  5px 5px 10px rgba(0,0,0,0.5),
+                  inset -0px -0px 8px rgba(255, 255, 255, 0.1),
+                  inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s;
+}
+
+.neo-comp:hover{
+    box-shadow:  -0px -0px 8px rgba(255,255,255,0.1), 
+    0px 0px 10px rgba(0,0,0,0.5),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.1),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+
 /* mobile styles */
 .nav-site li{
     color: var(--text-color);
@@ -64,19 +81,13 @@ ul a{
 }
 .btn{
     border-radius: 50px;
-    background: #4D2361;
-    box-shadow:  5px 5px 10px #371945, 
-             -5px -5px 10px #632d7d;
+    
     color: var(--text-color);
     text-decoration: none;
     padding: 8px 30px;
-    transition: box-shadow inset 1s;
     font-weight: 600;
 }
-.btn:hover{
-    box-shadow: inset 5px 5px 10px #371945, 
-    inset -5px -5px 10px #632d7d;
-}
+
 #welcome {
     padding: 20px 20px 20px 0;
 }
@@ -136,13 +147,12 @@ ul a{
     display: flex;
     justify-content: center;
     border-radius: 30px;
-    background: #4D2361;
-    box-shadow:  5px 5px 10px #371945, 
-             -5px -5px 10px #632d7d;
     color: var(--text-color);
     margin: 50px 15px;
     padding: 20px;
 }
+
+
 .projects label{
     margin-left: 40px;
 }
@@ -169,9 +179,6 @@ ul a{
     margin: 50px 20px;
     padding: 26px;
     border-radius: 40px;
-    background: #4D2361;
-    box-shadow:  5px 5px 10px #371945, 
-             -5px -5px 10px #632d7d;
     color: var(--text-color);
 }
 
@@ -182,9 +189,6 @@ ul a{
 
 .socials div{
     border-radius: 40px;
-    background: #4D2361;
-    box-shadow:  5px 5px 10px #371945, 
-             -5px -5px 10px #632d7d;
     color: rgb(233, 135, 152);
     text-align: center;
     padding: 14px;
@@ -278,7 +282,7 @@ p,li{
     position: fixed;
     bottom: 0;
     left: 0;
-    background: #4D2361;
+    background: var(--secondary);
     width: 100vw;
     height: 70px;
 }
@@ -294,9 +298,7 @@ p,li{
 }
 .mob-header li{
     border-radius: 50px;
-    background: #4D2361;
-    box-shadow:  5px 5px 10px #371945, 
-             -5px -5px 10px #632d7d;
+    background: var(--secondary);
     color: var(--text-color);
     padding: 16px;
 }
