@@ -2,8 +2,12 @@
 :root{
     --primary: #FFC636;
     --secondary: #110715;
-    --text-color: #FFFFaa;
+    --text-color: #F3F3F3;
     --link-color: rgb(223, 201, 145);
+    /* #2f333b; */
+    /* #e97770 */
+    /* #f3f3f3 */
+    /* #282b34 */
 }
 
 /* fonts */
@@ -36,48 +40,20 @@ h1,h2{
     font-size: 1.4em;
 }
 
-.neo-comp{
-    background: var(--secondary);
-    box-shadow:  -2px -2px 4px rgba(255,255,255,0.1), 
-                  5px 5px 10px rgba(0,0,0,0.5),
-                  inset -0px -0px 8px rgba(255, 255, 255, 0.1),
-                  inset 0px 0px 10px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s;
+hr{
+    border: 1px solid #f0f0f0;
 }
-
-.neo-comp:hover{
-    box-shadow:  -0px -0px 8px rgba(255,255,255,0.1), 
-    0px 0px 10px rgba(0,0,0,0.5),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.1),
-    inset 5px 5px 10px rgba(0, 0, 0, 0.8);
-}
-
 
 /* mobile styles */
-.nav-site li{
-    color: var(--text-color);
-    text-decoration: none;
-}
-.nav-site ul{
-    list-style-type: none;
-    display: none;
-}
-ul a{
-    border-bottom: 1px solid #FF0;
-}
-.nav-site li{
-    display: inline-block;
-    margin: 0 8px;
+.nav-site{
+   width: 100%;
+   border-bottom: 2px solid;
+   border-color: var(--primary);
+   margin-bottom: 18px;
 }
 .nav-site h1{
-    border-bottom: 2px solid;
-    border-color: var(--primary);
-    padding: 20px;
-    grid-column: 1/5;
-    width: 80%;
-    grid-row: 1;
-    padding: 10px 0 0 0;
-    margin-left: 12px;
+    width: 100%;
+    text-align: center;
 }
 .btn{
     border-radius: 50px;
@@ -89,48 +65,104 @@ ul a{
 }
 
 #welcome {
-    padding: 20px 20px 20px 0;
-}
-.welcome-text{
-    padding: 10px;
-    width: 80%;
-}
-
-.welcome-text p{
-    margin-top: 8px;
+    padding: 12px;
+    height: 94vh;
+    background: #2f333b url("img/banner.jpg") center center;
+    background-size: cover;
 }
 .welcome-img{
-    position: absolute;
-    right: -140px;
-    top: -100px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
-.welcome-img .planet{
-    width: 350px;
-    height: 350px;
+.welcome-img h2{
+    font-weight: 800;
+    padding: 8px;
+}
+.welcome-img p{
+    padding: 30px 2px;
+    color: var(--text-color);
 }
 
+.round-logo{
+    align-self: center;
+    border-radius: 50%;
+    background: #efac28;
+    padding: 20px 6px;
+    width: 60%;
+}
 
+section{
+    position: relative;
+}
 #portfolio{
     margin: 0;
     padding: 0;
-    background: var(--secondary);
+    background: #e97770 url("img/overlay.png");
 }
-
-#portfolio h3{
+.sec-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    font-size: 0.9em;
+    height: 2.5em;
+    top: -2.9em;
+    padding-top: 0.5em;
+    width: 18em;
+    line-height: 2.5em;
+    margin-bottom: -2.5em;
+    margin-left: -9em;
 }
 
-#portfolio div{
-    text-align: center;
-    align-items: center;
-    align-content: center;
+.sec-title:before {
+    content: '';
+    position: absolute;
+    bottom: -38px;
+    left: -35px;
+    width: 35px;
+    height: 38px;
+    background: url("img/shadow.png");
 }
 
+.sec-title:after {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+    content: '';
+    position: absolute;
+    bottom: -38px;
+    right: -35px;
+    width: 35px;
+    height: 38px;
+    background: url("img/shadow.png");
+}
+.style1{
+    background: #e97770 url("img/overlay.png");
+    color: #fff;
+}
+.style2{
+    background: #fff url("img/overlay.png");
+    color: #000;
+}
+.style3{
+    
+    background: #f3f3f3 url("img/overlay.png");
+    color: #2f333b;
+}
+.style4{
+    background: #282b34 url("img/overlay.png");
+    color: #fff;
+}
 .projects {
-    padding: 0;
+    position: relative;
     margin: 0;
+    width: 100%;
 }
 
 .projects a{
@@ -143,26 +175,57 @@ ul a{
     color: #ff0;
 }
 
-.projects div{
+.proj{
+    background: #df8985;
+    margin: auto;
+    margin-bottom: 58px;
+    align-items: center;
+    text-align: center;
+    width: 85%;
+    border-radius: 12px;
+}
+.proj-header{
+    background: red;
+    width: 100%;
+    height: 35vh;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.p-img1{
+    background: url("img/tomato-pomodoro.jpg") center;
+    background-size: cover;
+}
+.p-img2{
+    background: url("img/charity-heart.jpg") center;
+    background-size: cover;
+}
+.p-img3{
+    background: url("img/book-finder.jpg") center;
+    background-size: cover;
+}
+.proj-body{
+    text-align: left;
+    padding: 12px;
+    color: #fff;
+}
+
+.proj-body p{
+    color: #fff;
+    font-weight: 300;
+}
+.proj-body a{
+    color: #fff;
     display: flex;
-    justify-content: center;
-    border-radius: 30px;
-    color: var(--text-color);
-    margin: 50px 15px;
-    padding: 20px;
+    align-items: center;
 }
 
-
-.projects label{
-    margin-left: 40px;
-}
-.projects img {
-    width: 50%;
-    align-self: center;
+.proj-body a img{
+    margin-right: 10px;
 }
 
 #skills{
-    background: var(--secondary);
+    background: #fff url("img/overlay.png");
+    color: #000;
     padding: 30px;
 }
 #skills h3{
@@ -185,19 +248,19 @@ ul a{
 .socials{
     padding: 0;
     margin: 0;
+    align-items: center;
+    text-align: center;
 }
 
-.socials div{
-    border-radius: 40px;
-    color: rgb(233, 135, 152);
-    text-align: center;
-    padding: 14px;
-    margin: 40px;
-}
 
 .link{
-    padding: 10px;
-    margin: 28px;    
+    padding: 8px;
+    margin: 0;  
+}
+
+#contact{
+    background: #282b34 url("img/overlay.png");
+    color: #fff;
 }
 
 #contact h3{
@@ -207,7 +270,8 @@ ul a{
 
 #about{
     padding: 40px 100px;
-    background: var(--secondary);
+    background: #f3f3f3 url("img/overlay.png");
+    color: #2f333b;
 }
 #about h3{
     text-align: center;
@@ -221,55 +285,6 @@ p,li{
     color: rgb(233, 135, 152);
 }
 
-
-/* Spinning Planet */
-.planet-animation{
-    text-align: center;
-    align-items: center;
-    transition: 1s;
-    transform: scale(0.8);
-}
-
-.planet-animation:hover{
-    transform: scale(1);
-}
-
-.planet{
-    position: relative;
-    background-color: transparent;
-    background-image: url("img/planet.svg");
-    border-style: none;
-    border-width: 1px;
-    margin-left: 35%;
-    animation-name: rot;
-    animation-timing-function: linear;
-    animation-direction: reverse;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-}
-
-
-
-.orbit{
-    background-color: transparent;
-    position: absolute;
-    left: -15%;
-    top: -10%;
-    width: 120%;
-    height: 120%;
-    animation-name: rot;
-    animation-timing-function: linear;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-}
-
-@keyframes rot {
-    100%{
-        transform: rotateZ(1turn);
-    }
-}
 
 .minor_only{
     display: none;
