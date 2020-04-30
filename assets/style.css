@@ -261,12 +261,40 @@ section{
 #contact{
     background: #282b34 url("img/overlay.png");
     color: #fff;
+    padding: 8px;
 }
 
 #contact h3{
     text-align: center;
     margin-bottom: 20px;;
 }
+
+.contact-form{
+    background: red;
+}
+
+.form{
+    background: blue;
+    padding: 8px;
+    position: relative;
+}
+
+.form input,textarea{
+    width: 95%;
+    min-height: 22px;
+    background: #CCC;
+    border: none;
+    border-radius: 6px;
+    margin: 12px 0px;
+    padding: 8px;
+}
+
+.form label{
+    position: absolute;
+    left: 30px;
+}
+
+
 
 #about{
     padding: 40px 100px;
