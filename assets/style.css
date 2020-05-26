@@ -245,6 +245,18 @@ section {
     color: #fff;
     display: flex;
     align-items: center;
+    width: 65%;
+    margin: 12px;
+    padding: 2px 8px;
+    background: transparent;
+    border-radius: 14px;
+    border: none;
+    box-shadow: 2px 2px 4px #00000090, -2px -2px 4px #ffffff3f, inset 0px 0px 0px transparent, inset 0px 0px 0px transparent;
+}
+
+.proj-body a:hover {
+    background: #e97770;
+    box-shadow: 0px 0px 0px transparent, 0px 0px 0px transparent, inset 2px 2px 4px #000000e0, inset -1px -1px 3px #ffffffaa;
 }
 
 .proj-body a img {
@@ -266,26 +278,61 @@ section {
     margin: 5px;
 }
 
+.things {
+    width: 100%;
+}
+
 .things div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     align-items: center;
-    align-content: center;
-    margin: 50px 20px;
-    padding: 26px;
+    margin: 20px 20px;
+    padding: 16px;
+    height: 160px;
     border-radius: 40px;
     color: var(--text-color);
+    box-shadow: 2px 2px 4px #00000090, -1px -1px 3px #ffffff30;
+}
+
+.neo-comp img {
+    width: 40%;
 }
 
 .socials {
+    display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 0;
     align-items: center;
     text-align: center;
+    justify-content: center;
 }
 
 .link {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link a {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
     padding: 8px;
-    margin: 0;
+    margin: 8px;
+    margin-right: 26px;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 2px 2px 4px #00000090, -1px -1px 3px #ffffff30;
 }
 
 #contact {
@@ -300,45 +347,19 @@ section {
     ;
 }
 
-.contact-form {
-    background: red;
-}
-
-.form {
-    background: blue;
-    padding: 8px;
-    position: relative;
-}
-
-.form input,
-textarea {
-    width: 95%;
-    min-height: 22px;
-    background: #CCC;
-    border: none;
-    border-radius: 6px;
-    margin: 12px 0px;
-    padding: 8px;
-}
-
-.form label {
-    position: absolute;
-    left: 30px;
-}
-
 #about {
     padding: 40px 100px;
     background: #f3f3f3 url("img/overlay.png");
     color: #2f333b;
 }
 
+#about p {
+    color: #2f333b;
+}
+
 #about h3 {
     text-align: center;
     margin-bottom: 25px;
-}
-
-#about div {
-    grid-column: 1/9;
 }
 
 p,
