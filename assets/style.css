@@ -104,9 +104,7 @@ hr {
 
 .round-logo {
     align-self: center;
-    border-radius: 50%;
-    background: #efac28;
-    padding: 8px 4px;
+    padding: 0;
     width: 30%;
 }
 
@@ -310,12 +308,16 @@ section {
     justify-content: center;
 }
 
+.socials div {
+    width: 100%;
+}
+
 .link {
     align-self: flex-start;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    text-align: left;
 }
 
 .link a {
@@ -324,9 +326,9 @@ section {
     justify-content: center;
     padding: 8px;
     margin: 8px;
-    margin-right: 26px;
-    width: 36px;
-    height: 36px;
+    margin-right: 12px;
+    width: 26px;
+    height: 26px;
     background: transparent;
     align-items: center;
     text-align: center;
