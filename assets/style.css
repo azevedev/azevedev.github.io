@@ -386,7 +386,9 @@ section {
 }
 
 #about {
-    padding: 15px;
+    padding: 8px;
+    padding-top: 25px;
+    padding-bottom: 50px;
     background: #f3f3f3 url("img/overlay.png");
     color: #2f333b;
     text-align: center;
