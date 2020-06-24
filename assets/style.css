@@ -105,11 +105,22 @@ hr {
 .round-logo {
     align-self: center;
     padding: 0;
-    width: 30%;
+    width: 250px;
+    height: 180px;
+}
+
+.round-logo img{
+    border-radius: 60%;
 }
 
 section {
     position: relative;
+}
+
+.link-disabled{
+    box-shadow: none !important;
+    pointer-events: none !important;
+    color: #444 !important;
 }
 
 #portfolio {
@@ -214,21 +225,38 @@ section {
 }
 
 .p-img1 {
-    background: url("img/tomato-pomodoro.jpg") center;
+    background: url("img/diarix-logo.jpg") center;
     background-size: cover;
 }
 
 .p-img2 {
-    background: url("img/charity-heart.jpg") center;
+    background: url("img/sublime-logo.jpg") center;
     background-size: cover;
 }
 
 .p-img3 {
+    background: url("img/tomato-pomodoro.jpg") center;
+    background-size: cover;
+}
+
+.p-img4 {
+    background: url("img/charity-heart.jpg") center;
+    background-size: cover;
+}
+
+.p-img5 {
     background: url("img/book-finder.jpg") center;
     background-size: cover;
 }
 
+.p-img6 {
+    background: url("img/twitter-bot.jpg") center;
+    background-size: cover;
+}
+
 .proj-body {
+    display: flex;
+    flex-direction: column;
     text-align: left;
     padding: 12px;
     color: #fff;
@@ -237,6 +265,14 @@ section {
 .proj-body p {
     color: #fff;
     font-weight: 300;
+}
+.proj-body .txt{
+    height: 140px;
+}
+
+.proj-body .pj-link{
+    align-self: flex-end;
+    width: 100%;
 }
 
 .proj-body a {
@@ -280,7 +316,7 @@ section {
     width: 100%;
 }
 
-.things div {
+.things div.neo-comp{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -296,6 +332,7 @@ section {
 
 .neo-comp img {
     width: 40%;
+    max-width: 125px;
 }
 
 .socials {
@@ -346,17 +383,18 @@ section {
 #contact h3 {
     text-align: center;
     margin-bottom: 20px;
-    ;
 }
 
 #about {
-    padding: 40px 100px;
+    padding: 15px;
     background: #f3f3f3 url("img/overlay.png");
     color: #2f333b;
+    text-align: center;
 }
 
 #about p {
     color: #2f333b;
+    text-align: center;
 }
 
 #about h3 {
@@ -405,8 +443,43 @@ li {
 
 
 /* for tablets */
-
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
 @media screen and (min-width: 700px) {
+    .projects{
+        display: flex;
+        /* flex-direction: row; */
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .projects div.proj{
+        width: 30%;
+        height: 600px;
+        max-height: 600px;
+        margin: 12px;
+    }
+    .things {
+        display: flex;
+        /* flex-direction: row; */
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .things div.things-topic{
+        width: 100%;
+        margin: 0;
+        /* height: 600px; */
+        /* max-height: 600px; */
+        /* margin: 12px; */
+    }
+    .things div.neo-comp{
+        width: 20%;
+        max-width: 30%;
+        margin: 12px;
+    }
     body {
         font-size: 20px;
     }

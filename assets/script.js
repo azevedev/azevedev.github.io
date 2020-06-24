@@ -1,2 +1,2 @@
 console.log("ready!");
-document.getElementById("id").addEventListener("click", func);
+// document.getElementById("id").addEventListener("click", func);
