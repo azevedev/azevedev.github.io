@@ -23,5 +23,15 @@ function isVisible(el){
     }
 }
 
-document.addEventListener("scroll", changeVisible);
+document.addEventListener("scroll", ttr(changeVisible, 100));
 changeVisible();
+
+function ttr(func, time){
+    var total = Date.now();
+    return function(){
+        if((total + time - Date.now()) < 0){
+            func();
+            total = Date.now();
+        }
+    }
+}

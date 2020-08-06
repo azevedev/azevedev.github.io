@@ -92,9 +92,8 @@ hr {
 #welcome {
     padding: 12px;
     height: 100vh;
-    background: #000000 url("img/banner.jpg") center center;
+    background: #e97770 url("img/banner.jpg") center center;
     background-size: cover;
-    filter: brightness(50%);
 }
 
 .welcome-img {
@@ -156,9 +155,9 @@ section {
     background: #e97770 url("img/overlay.png");
     transform: translateY(-30px);
     opacity: 0;
-    -moz-animation: slideup2 1s forwards;
-    animation: slideup2 1s forwards;
-    animation-delay: 1.5s;
+    -moz-animation: slideup2 0.5s forwards;
+    animation: slideup2 0.5s forwards;
+    animation-delay: 1.2s;
 
 }
 
@@ -611,6 +610,7 @@ li {
     to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes slideup2 {
-    from { opacity: 0; transform: translateY(0px); }
-    to   { opacity: 1; transform: translateY(-35px); }
+    0% { opacity: 0; transform: translateY(0px); }
+    50% {opacity: 1;}
+    100%   { opacity: 1; transform: translateY(-35px); }
 }
