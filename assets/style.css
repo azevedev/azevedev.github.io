@@ -170,8 +170,8 @@ section {
     font-weight: 700;
     letter-spacing: 0.25em;
     font-size: 0.9em;
-    height: 2.4em;
-    top: -2.9em;
+    height: 2.5em;
+    top: -3em;
     padding-top: 0.5em;
     width: 18em;
     line-height: 2.5em;
@@ -204,7 +204,7 @@ section {
 }
 
 .style1 {
-    background: #fff url("img/overlay.png");
+    background: #e97770 url("img/overlay.png");
     color: #fff;
 }
 
