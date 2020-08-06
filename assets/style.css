@@ -159,7 +159,8 @@ section {
     -moz-animation: slideup2 0.5s forwards;
     animation: slideup2 0.5s forwards;
     animation-delay: 1.2s;
-
+    border: none;
+    outline-color: transparent;
 }
 
 .sec-title {
@@ -177,6 +178,8 @@ section {
     line-height: 2.5em;
     margin-bottom: -2.5em;
     margin-left: -9em;
+    border: none;
+    outline-color: transparent;
 }
 
 .sec-title:before {
