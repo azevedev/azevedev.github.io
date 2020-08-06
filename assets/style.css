@@ -171,7 +171,7 @@ section {
     font-weight: 700;
     letter-spacing: 0.25em;
     font-size: 0.9em;
-    height: 2.5em;
+    height: 2.8em;
     top: -3em;
     padding-top: 0.5em;
     width: 18em;
@@ -185,7 +185,7 @@ section {
 .sec-title:before {
     content: '';
     position: absolute;
-    bottom: -35px;
+    bottom: -33px;
     left: -35px;
     width: 35px;
     height: 38px;
@@ -199,7 +199,7 @@ section {
     transform: scaleX(-1);
     content: '';
     position: absolute;
-    bottom: -35px;
+    bottom: -33px;
     right: -35px;
     width: 35px;
     height: 38px;
