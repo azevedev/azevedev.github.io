@@ -92,6 +92,7 @@ hr {
 #welcome {
     padding: 12px;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background: #e97770 url("img/banner.jpg") center center;
     background-size: cover;
 }
