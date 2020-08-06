@@ -204,8 +204,9 @@ section {
 }
 
 .style1 {
-    background: #e97770 url("img/overlay.png");
+    background: #fff url("img/overlay.png");
     color: #fff;
+    border: 1px solid black;
 }
 
 .style2 {
