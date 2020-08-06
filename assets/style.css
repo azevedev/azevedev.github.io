@@ -31,9 +31,9 @@ html {
 
 body {
     margin: 0;
-    background: var(--secondary);
+    background: #e97770 url("img/overlay.png");
     color: var(--text-color);
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: 'Carme Regular';
 }
 
@@ -58,11 +58,22 @@ hr {
 
 /* mobile styles */
 
+.section{
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.hidden {
+    opacity: 0;
+}
+
 .nav-site {
     width: 100%;
     border-bottom: 2px solid;
     border-color: var(--primary);
     margin-bottom: 18px;
+    -moz-animation: fadein 0.5s;
+    animation: fadein 0.5s;
 }
 
 .nav-site h1 {
@@ -77,12 +88,13 @@ hr {
     padding: 8px 30px;
     font-weight: 600;
 }
-
+/* filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia() | url();  */
 #welcome {
     padding: 12px;
-    height: 86vh;
-    background: #2f333b url("img/banner.jpg") center center;
+    height: 100vh;
+    background: #000000 url("img/banner.jpg") center center;
     background-size: cover;
+    filter: brightness(50%);
 }
 
 .welcome-img {
@@ -90,6 +102,10 @@ hr {
     text-align: center;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    -moz-animation: fadein 0.5s;
+    animation: fadein 0.5s forwards;
+    animation-delay: 0.5s;
 }
 
 .welcome-img h2 {
@@ -107,6 +123,17 @@ hr {
     padding: 0;
     width: 250px;
     height: 180px;
+    opacity: 0;
+    -moz-animation: slideup 0.5s;
+    animation: slideup 0.5s forwards;
+    animation-delay: 1s;
+}
+
+.arrow-down{
+    opacity: 0;
+    -moz-animation: fadein 0.5s;
+    animation: fadein 0.5s forwards;
+    animation-delay: 1.2s;
 }
 
 .round-logo img{
@@ -127,6 +154,12 @@ section {
     margin: 0;
     padding: 0;
     background: #e97770 url("img/overlay.png");
+    transform: translateY(-30px);
+    opacity: 0;
+    -moz-animation: slideup2 1s forwards;
+    animation: slideup2 1s forwards;
+    animation-delay: 1.5s;
+
 }
 
 .sec-title {
@@ -267,7 +300,7 @@ section {
     font-weight: 300;
 }
 .proj-body .txt{
-    height: 140px;
+    height: 70px;
 }
 
 .proj-body .pj-link{
@@ -381,6 +414,7 @@ section {
     color: #fff;
     padding: 8px;
     text-align: center;
+    height: 300px;
 }
 
 #contact h3 {
@@ -390,11 +424,12 @@ section {
 
 #about {
     padding: 8px;
-    padding-top: 25px;
+    padding-top: 55px;
     padding-bottom: 50px;
     background: #f3f3f3 url("img/overlay.png");
     color: #2f333b;
     text-align: center;
+    height: 300px;
 }
 
 #about p {
@@ -466,6 +501,9 @@ li {
         max-height: 600px;
         margin: 12px;
     }
+    .proj-body .txt{
+        height: 120px;
+    }
     .things {
         display: flex;
         /* flex-direction: row; */
@@ -521,6 +559,7 @@ li {
     .mob-header {
         display: none;
     }
+    
 }
 
 
@@ -541,4 +580,37 @@ li {
     .mob-header {
         display: none;
     }
+    
+}
+
+
+@media screen and (min-width: 1700px) {
+    .projects div.proj{
+        height: 700px;
+        max-height: 800px;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .projects div.proj{
+        height: 850px;
+        max-height: 900px;
+    }
+
+}
+
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideup {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideup2 {
+    from { opacity: 0; transform: translateY(0px); }
+    to   { opacity: 1; transform: translateY(-35px); }
 }
