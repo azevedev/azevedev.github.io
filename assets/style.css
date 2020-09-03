@@ -180,6 +180,8 @@ section {
     margin-left: -9em;
     border: none;
     outline-color: transparent;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .sec-title:before {
@@ -374,28 +376,16 @@ section {
 
 .socials {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0;
     margin: 0;
     align-items: center;
     text-align: center;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 0;
 }
 
-.socials div {
-    width: 100%;
-}
-
-.link {
-    align-self: flex-start;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    padding-left: 14%;
-}
-
-.link a {
+.socials a {
     display: flex;
     cursor: pointer;
     justify-content: center;
@@ -410,6 +400,7 @@ section {
     border-radius: 50%;
     border: none;
     box-shadow: 2px 2px 4px #00000090, -1px -1px 3px #ffffff30;
+    
 }
 
 #contact {
@@ -417,7 +408,7 @@ section {
     color: #fff;
     padding: 8px;
     text-align: center;
-    height: 300px;
+    height: 200px;
 }
 
 #contact h3 {
@@ -491,6 +482,7 @@ li {
     height: 0;
   }
 @media screen and (min-width: 700px) {
+    
     .projects{
         display: flex;
         /* flex-direction: row; */
@@ -526,9 +518,7 @@ li {
         max-width: 30%;
         margin: 12px;
     }
-    .link {
-        padding-left: 30%;
-    }
+    
     body {
         font-size: 20px;
     }
@@ -561,6 +551,10 @@ li {
     }
     .mob-header {
         display: none;
+    }
+    .socials {
+        padding-left: 20%;
+        padding-right: 20%;
     }
     
 }
