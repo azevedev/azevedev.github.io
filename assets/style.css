@@ -27,6 +27,7 @@ html {
     scroll-behavior: smooth;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 body {
@@ -35,6 +36,8 @@ body {
     color: var(--text-color);
     overflow: hidden;
     font-family: 'Carme Regular';
+    min-height: 100vh;
+    max-height: 100vh;
 }
 
 h1,
@@ -57,6 +60,128 @@ hr {
 
 
 /* mobile styles */
+
+.loader-wrapper {
+    height: 100vh;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    top: 50%;
+    opacity: 1;
+    transition: 0.7s;
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+    25% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+    75% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+
+.text-effect {
+    margin-top: 88px;
+    padding: 0;
+    color: rgb(207, 207, 207);
+    font-size: 100px;
+    font-family: 'Ubuntu';
+    /* letter-spacing: 5px; */
+    text-shadow: 0px 0px 1px rgb(167, 167, 167), 0px 1px 1px rgb(167, 167, 167), 0px 2px 1px rgb(167, 167, 167), 1px 1px 1px rgb(167, 167, 167), 1px 2px 1px rgb(167, 167, 167), 1px 3px 1px rgb(167, 167, 167), 2px 2px 1px rgb(167, 167, 167), 2px 3px 1px rgb(167, 167, 167), 2px 4px 1px rgb(167, 167, 167), 3px 3px 1px rgb(167, 167, 167), 3px 4px 1px rgb(167, 167, 167), 3px 5px 1px rgb(167, 167, 167), 1px 10px 30px rgba(0, 0, 0, 0.8), 1px 10px 70px rgba(0, 0, 0, 0.8), 0px 5px 5px rgba(0, 0, 0, 0.8), -5px 5px 20px rgba(0, 0, 0, 0.8), 5px 5px 20px rgba(0, 0, 0, 0.8), 1px 1px 120px rgba(219, 219, 219, 0.5);
+    position: relative;
+}
+
+.text-effect::after {
+    content: "Hi!";
+    font-size: 100px;
+    font-family: 'Ubuntu';
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 0px 0px 100px rgba(255, 215, 0, 0.8);
+    animation: cycle 10s linear infinite;
+}
+
+@keyframes cycle {
+    0% {
+        text-shadow: 0px 0px 80px rgba(255, 215, 0, 0.8);
+    }
+    20% {
+        text-shadow: 0px 0px 80px rgba(11, 199, 96, 0.8);
+    }
+    40% {
+        text-shadow: 0px 0px 80px rgba(168, 124, 199, 0.8);
+    }
+    60% {
+        text-shadow: 0px 0px 80px rgba(199, 11, 11, 0.8);
+    }
+    80% {
+        text-shadow: 0px 0px 80px rgba(255, 215, 0, 1);
+    }
+    100% {
+        text-shadow: 0px 0px 80px rgba(255, 215, 0, 0.8);
+    }
+}
+
+.content {
+    position: relative;
+    opacity: 0;
+    transition-delay: 1s;
+    transition: 1s;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
 
 .section {
     opacity: 1;
@@ -93,12 +218,20 @@ hr {
 /* filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia() | url();  */
 
 #welcome {
-    padding: 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 12px;
+    width: 100%;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     /* background: #e97770 url("img/banner.jpg") center center; */
     background-color: #202023;
     background-size: cover;
+    background: radial-gradient(ellipse at bottom, #17222e 0%, #07080c 100%);
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
 }
 
 .welcome-img {
@@ -106,6 +239,8 @@ hr {
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
     -moz-animation: fadein 0.5s;
     animation: fadein 0.5s forwards;
@@ -118,11 +253,20 @@ hr {
 }
 
 .welcome-img p {
-    padding: 30px 2px;
+    width: 85%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    background-color: #00000075;
+    border-radius: 12px;
+    padding: 22px 2px;
+    margin-left: 14px;
+    margin-right: 14px;
     color: var(--text-color);
 }
 
 .round-logo {
+    margin-top: 28px;
+    margin-bottom: 28px;
     align-self: center;
     padding: 0;
     width: 250px;
@@ -156,6 +300,7 @@ section {
 
 #portfolio {
     margin: 0;
+    margin-top: calc(var(--vh, 1vh) * 100);
     padding: 0;
     /* background: #e97770 url("img/overlay.png"); */
     background: #1a1a1d url("img/overlay.png");
@@ -166,6 +311,7 @@ section {
     animation-delay: 1.2s;
     border: none;
     outline-color: transparent;
+    margin-bottom: -35px;
 }
 
 .sec-title {
