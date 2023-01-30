@@ -133,7 +133,7 @@ hr {
 }
 
 .text-effect::after {
-    content: "Hi!";
+    content: "Hello!";
     font-size: 100px;
     font-family: 'Ubuntu';
     position: absolute;
