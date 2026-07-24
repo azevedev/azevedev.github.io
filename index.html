@@ -1,320 +1,838 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matheus Azevedo · Senior Software Developer</title>
+    <meta name="description"
+        content="Senior full-stack developer with eight years building payments, checkout, logistics and CRM systems in Laravel, Rails and JavaScript. Currently leading a team of six in Brasília, Brazil.">
+    <meta name="author" content="Matheus Azevedo">
+    <meta name="theme-color" content="#153243" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f4f9e9" media="(prefers-color-scheme: light)">
+    <link rel="canonical" href="https://azevedev.github.io/">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Matheus Azevedo">
+    <meta property="og:title" content="Matheus Azevedo · Senior Software Developer">
+    <meta property="og:description"
+        content="Payment gateways, checkout, affiliate splits, logistics, CRM. Eight years of the plumbing a business runs on.">
+    <meta property="og:url" content="https://azevedev.github.io/">
+    <meta property="og:image" content="https://azevedev.github.io/assets/img/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Matheus Azevedo, senior software developer, in 8-bit pixel art.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Matheus Azevedo · Senior Software Developer">
+    <meta name="twitter:description"
+        content="Payment gateways, checkout, affiliate splits, logistics, CRM. Eight years of the plumbing a business runs on.">
+    <meta name="twitter:image" content="https://azevedev.github.io/assets/img/og-card.png">
+
+    <link rel="preload" href="assets/fonts/bricolage-grotesque-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/plex-sans-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/style.css">
-    <!-- <link rel="stylesheet" href="assets/stars.css"> -->
+    <noscript>
+        <style>
+            .reveal { opacity: 1; transform: none; }
+            .display .line > span { transform: none; animation: none; }
+            .portrait__canvas { display: none; }
+            .skillset li i::before { transform: scaleX(1); }
+            .channels__copy { display: none; }
+        </style>
+    </noscript>
+
+    <script>
+        // Set the theme before first paint so the page never flashes the wrong ground.
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                document.documentElement.dataset.theme = saved || (prefersLight ? 'light' : 'dark');
+            } catch (e) { /* private mode: keep the dark default */ }
+        })();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Matheus Azevedo",
+      "url": "https://azevedev.github.io/",
+      "image": "https://azevedev.github.io/assets/img/avatar.png",
+      "jobTitle": "Senior Software Developer",
+      "email": "mailto:azevedev@gmail.com",
+      "telephone": "+55-61-99108-8699",
+      "address": { "@type": "PostalAddress", "addressLocality": "Brasília", "addressCountry": "BR" },
+      "sameAs": ["https://github.com/azevedev", "https://www.linkedin.com/in/azevedomath/"],
+      "knowsAbout": ["Laravel", "Ruby on Rails", "Vue.js", "Nuxt", "React", "Node.js", "Microservices", "PostgreSQL", "AWS", "Docker"],
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Brasília (UnB)" }
+    }
+    </script>
 </head>
 
-<body class="noscroll">
-    <!-- Loading square for squar.red network -->
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div>
-    <div class="content">
-        <section id="welcome">
-            <nav class="nav-site">
-                <h1>Matheus Azevedo</h1>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+        <div class="topbar__in">
+            <a class="brand" href="#top">
+                <img class="brand__face" src="assets/img/avatar-64.png" width="64" height="64" alt="" aria-hidden="true">
+                <span class="brand__name">Matheus&nbsp;Azevedo</span>
+                <span class="brand__role">Senior Software Dev</span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Sections">
+                <a href="#work" data-scramble>Work</a>
+                <a href="#experience" data-scramble>Experience</a>
+                <a href="#skills" data-scramble>Skills</a>
+                <a href="#about" data-scramble>About</a>
+                <a href="#contact" data-scramble>Contact</a>
             </nav>
-            <div class="welcome-img">
-                <!-- <h2>Web Developer <br> & JavaScript Enthusiastic.</h2> -->
-                <span class="text-effect">Hello!</span>
-                <p>I'm a back-end developer based in Brazil.</p>
-                <br>
-                <div class="round-logo">
-                    <img src="assets/img/porrrrrtrait.png" width="50%">
-                </div>
-                <br>
-                <div class="arrow-down">
-                    <img src="https://img.icons8.com/material-sharp/40/FFC636/long-arrow-down.png" />
-                </div>
+
+            <div class="topbar__tools">
+                <button class="btn-icon" id="theme-toggle" type="button" aria-pressed="false"
+                    aria-label="Switch to light theme">
+                    <span class="btn-icon__glyph" aria-hidden="true">
+                        <svg class="icon icon--sun" viewBox="0 0 12 12" width="12" height="12" focusable="false">
+                            <path d="M4 4h4v4H4zM5 0h2v2H5zM5 10h2v2H5zM0 5h2v2H0zM10 5h2v2h-2zM1 1h2v2H1zM9 1h2v2H9zM1 9h2v2H1zM9 9h2v2H9z" />
+                        </svg>
+                        <svg class="icon icon--moon" viewBox="0 0 12 12" width="12" height="12" focusable="false">
+                            <path d="M4 0h4v2H4zM2 2h4v2H2zM2 4h2v4H2zM2 8h4v2H2zM4 10h4v2H4z" />
+                        </svg>
+                    </span>
+                </button>
+                <button class="btn-icon btn-icon--menu" id="menu-toggle" type="button" aria-expanded="false"
+                    aria-controls="nav" aria-label="Open menu">
+                    <span class="bars" aria-hidden="true"></span>
+                </button>
             </div>
+        </div>
+        <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+    </header>
 
-            <div class="star-field">
-                <div class="layer"></div>
-                <div class="layer"></div>
-                <div class="layer"></div>
-                <div class="layer"></div>
+    <main id="main">
+
+        <!-- ───────────────────────────────  INTRO  ─────────────────────────────── -->
+        <section id="top" class="hero">
+            <div class="grid-dots" aria-hidden="true"></div>
+            <div class="shell hero__in">
+
+                <div class="hero__copy">
+                    <p class="eyebrow reveal" data-i="0">
+                        <span class="dot" aria-hidden="true"></span>
+                        Brasília, Brazil · UTC−3 · open to remote
+                    </p>
+
+                    <h1 class="display">
+                        <span class="line"><span>I make the</span></span>
+                        <span class="line"><span>unglamorous</span></span>
+                        <span class="line"><span>parts <em>work</em>.</span></span>
+                    </h1>
+
+                    <p class="lede reveal" data-i="1">
+                        Payment gateways, checkout flows, affiliate splits, shipment tracking, CRM pipelines: the
+                        plumbing a business runs on. Eight years of it, mostly in Laravel and Rails, and now a team of
+                        six to run it with.
+                    </p>
+
+                    <div class="cta reveal" data-i="2">
+                        <a class="btn btn--solid magnet" href="#work">See the work</a>
+                        <a class="btn magnet" href="assets/matheus-azevedo-cv.pdf" download>Download CV<span class="btn__meta">PDF</span></a>
+                    </div>
+
+                    <dl class="facts reveal" data-i="3">
+                        <div><dt>Experience</dt><dd><span class="num" data-to="8">8</span>+ yrs</dd></div>
+                        <div><dt>Now</dt><dd>Sr. Dev Manager</dd></div>
+                        <div><dt>Team</dt><dd><span class="num" data-to="6">6</span> devs</dd></div>
+                        <div><dt>Depth</dt><dd>Back-end first</dd></div>
+                    </dl>
+                </div>
+
+                <figure class="portrait reveal" data-i="2">
+                    <div class="window">
+                        <div class="window__bar">
+                            <span class="window__title">azevedev.png</span>
+                            <span class="window__meta">64 × 64</span>
+                        </div>
+                        <div class="window__body" id="portrait-stage">
+                            <canvas class="portrait__canvas" id="portrait-canvas" width="64" height="64"
+                                aria-hidden="true"></canvas>
+                            <img class="portrait__img" id="portrait-img" src="assets/img/avatar-64.png" width="64"
+                                height="64" decoding="async"
+                                alt="Pixel-art portrait of Matheus Azevedo: long dark hair, beard, blue-framed glasses, navy jacket.">
+                        </div>
+                    </div>
+                    <figcaption>
+                        Yes, that's me. <span>Hover to redraw it, one pixel at a time.</span>
+                    </figcaption>
+                </figure>
+
             </div>
-
-
-
         </section>
 
-        <section id="portfolio">
-            <div class="sec-title style1">My work</div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="projects">
+        <!-- ────────────────────────────────  WORK  ─────────────────────────────── -->
+        <section id="work" class="section">
+            <div class="shell">
+                <header class="sec-head reveal">
+                    <h2>Selected work</h2>
+                    <p class="sec-note">Products I helped build, and things I built because I wanted to.</p>
+                </header>
 
-                <div class="section hidden proj">
-                    <div class="proj-header p-img0">
-                    </div>
-                    <div class="proj-body">
-                        <p><b>Shipsmart</b></p>
-                        <hr style="width: 100%;">
-                        <div class="txt">
-                            <p>A company that helps you send packages around the world. </br>I don't own the code!</p>
+                <div class="cards">
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://www.ecosysauto.com.br/" target="_blank" rel="noopener"
+                            tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/ecosys-auto.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Product · 2024 → 2025</p>
+                            <h3><a href="https://www.ecosysauto.com.br/" target="_blank" rel="noopener">Ecosys Auto</a></h3>
+                            <p class="card__desc">A white-label platform for car dealerships: inventory, CRM, digital
+                                contracts and a branded storefront. I designed and owned the CRM module and its
+                                WhatsApp automation.</p>
+                            <p class="stack"><span>Laravel</span><span>Nuxt 3</span><span>Microservices</span></p>
+                            <p class="card__links">
+                                <a href="https://www.ecosysauto.com.br/" target="_blank" rel="noopener">Live site<span aria-hidden="true">↗</span></a>
+                            </p>
                         </div>
-                        <div class="pj-link">
-                            <a target="_blank" href="#" class="link-disabled">
-                                <img src="https://img.icons8.com/material/32/444444/console.png" /> No Code
-                            </a>
-                            <a target="_blank" href="http://shipsmart.com.br/" style="color: #B70F14;">
-                                <img class="normal" src="https://img.icons8.com/material-sharp/32/B70F14/youtube-live.png" />
-                                <img class="hover" src="https://img.icons8.com/material-sharp/32/FFC636/youtube-live.png" />Live App
-                            </a>
+                    </article>
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://shipsmart.com.br/" target="_blank" rel="noopener"
+                            tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/shipsmart.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Product · 2021 → 2022</p>
+                            <h3><a href="https://shipsmart.com.br/" target="_blank" rel="noopener">ShipSmart</a></h3>
+                            <p class="card__desc">Cross-border commerce operations: multi-currency checkout, import tax,
+                                and fulfilment across several countries. I built the DHL tracking integration and an
+                                internal ticketing platform.</p>
+                            <p class="stack"><span>Laravel</span><span>Vue.js</span><span>DHL API</span></p>
+                            <p class="card__links">
+                                <a href="https://shipsmart.com.br/" target="_blank" rel="noopener">Live site<span aria-hidden="true">↗</span></a>
+                            </p>
                         </div>
-                    </div>
-                    <br>
+                    </article>
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://azevedev.github.io/atlas-arcade/" target="_blank"
+                            rel="noopener" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/atlas-arcade.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Open source · 2026</p>
+                            <h3><a href="https://azevedev.github.io/atlas-arcade/" target="_blank" rel="noopener">Atlas Arcade</a></h3>
+                            <p class="card__desc">An arcade geography quiz. Name the country from its flag or its
+                                shape, guess capitals, and tap the right spot on a spinning globe. It has no build
+                                step, installs as a PWA and plays offline.</p>
+                            <p class="stack"><span>Vanilla JS</span><span>Canvas</span><span>PWA</span></p>
+                            <p class="card__links">
+                                <a href="https://azevedev.github.io/atlas-arcade/" target="_blank" rel="noopener">Play<span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/azevedev/atlas-arcade" target="_blank" rel="noopener">Code<span aria-hidden="true">↗</span></a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://github.com/azevedev/The-last-lightkeeper" target="_blank"
+                            rel="noopener" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/lightkeeper.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Game · 2026</p>
+                            <h3><a href="https://github.com/azevedev/The-last-lightkeeper" target="_blank" rel="noopener">The Last Lightkeeper</a></h3>
+                            <p class="card__desc">A team-built SDL2 game for UnB's game development course. The engine
+                                is a C++ state machine, with lighting, audio and stage logic each in its own domain and
+                                the architecture actually written down.</p>
+                            <p class="stack"><span>C++</span><span>SDL2</span><span>Game architecture</span></p>
+                            <p class="card__links">
+                                <a href="https://github.com/azevedev/The-last-lightkeeper" target="_blank" rel="noopener">Code<span aria-hidden="true">↗</span></a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card card--quiet reveal">
+                        <span class="card__shot card__shot--plate" aria-hidden="true">
+                            <img src="assets/img/projects/diarix.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </span>
+                        <div class="card__body">
+                            <p class="card__tag">Product · 2019 → 2020 · archived</p>
+                            <h3>Diarix</h3>
+                            <p class="card__desc">A marketplace connecting households to working diarists, built with
+                                DDD inside a Laravel monolith, plus an Ionic app for people out on jobs.</p>
+                            <p class="stack"><span>Laravel</span><span>Vue.js</span><span>Ionic</span></p>
+                        </div>
+                    </article>
+
+                    <article class="card card--quiet reveal">
+                        <span class="card__shot card__shot--plate" aria-hidden="true">
+                            <img src="assets/img/projects/sublime.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </span>
+                        <div class="card__body">
+                            <p class="card__tag">Client · 2022 · archived</p>
+                            <h3>Redação Sublime</h3>
+                            <p class="card__desc">A platform where students submit essays and get them graded. Built
+                                during the consultancy years, when the brief changed every quarter.</p>
+                            <p class="stack"><span>Laravel</span><span>Livewire</span></p>
+                        </div>
+                    </article>
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://azevedev.github.io/detetive-virtual/" target="_blank"
+                            rel="noopener" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/detetive.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Open source · 2025</p>
+                            <h3><a href="https://azevedev.github.io/detetive-virtual/" target="_blank" rel="noopener">Detetive Virtual</a></h3>
+                            <p class="card__desc">A browser game that trains people to spot phishing. You read an
+                                incoming message, call it safe or suspicious, and the game shows you what gave it
+                                away. Final project for UnB's Informatics and Society course.</p>
+                            <p class="stack"><span>JavaScript</span><span>Browser game</span><span>Security</span></p>
+                            <p class="card__links">
+                                <a href="https://azevedev.github.io/detetive-virtual/" target="_blank" rel="noopener">Play<span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/azevedev/detetive-virtual" target="_blank" rel="noopener">Code<span aria-hidden="true">↗</span></a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://azevedev.github.io/verdepastos/" target="_blank"
+                            rel="noopener" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/agromaq.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Client · 2025</p>
+                            <h3><a href="https://azevedev.github.io/verdepastos/" target="_blank" rel="noopener">AgroMaq</a></h3>
+                            <p class="card__desc">A marketing site for a farm equipment dealer, covering product
+                                lines, plans and customer testimonials. Plain HTML and CSS, no build step, served
+                                straight from Pages.</p>
+                            <p class="stack"><span>HTML</span><span>CSS</span><span>Static site</span></p>
+                            <p class="card__links">
+                                <a href="https://azevedev.github.io/verdepastos/" target="_blank" rel="noopener">Live site<span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/azevedev/verdepastos" target="_blank" rel="noopener">Code<span aria-hidden="true">↗</span></a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card card--quiet reveal">
+                        <a class="card__shot card__shot--plate" href="https://twitter.com/bot_pt_song" target="_blank"
+                            rel="noopener" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/twitter-bot.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Side project · 2020</p>
+                            <h3><a href="https://twitter.com/bot_pt_song" target="_blank" rel="noopener">Músicas Traduzidas</a></h3>
+                            <p class="card__desc">A bot that translates Brazilian songs into English and posts them
+                                every hour. It translates them badly, which is most of the appeal. 320 posts over its
+                                run.</p>
+                            <p class="stack"><span>Python</span><span>Twitter API</span></p>
+                            <p class="card__links">
+                                <a href="https://twitter.com/bot_pt_song" target="_blank" rel="noopener">See it<span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/azevedev/TweeterBotPT-Songs" target="_blank" rel="noopener">Code<span aria-hidden="true">↗</span></a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://azevedev.github.io/BookFinder/" target="_blank"
+                            rel="noopener" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/book-finder.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Early work · 2020</p>
+                            <h3><a href="https://azevedev.github.io/BookFinder/" target="_blank" rel="noopener">Book Finder</a></h3>
+                            <p class="card__desc">Type a subject and get books back with covers, authors and
+                                publishers. One of the first things I built that had to talk to somebody else's
+                                API.</p>
+                            <p class="stack"><span>JavaScript</span><span>REST API</span></p>
+                            <p class="card__links">
+                                <a href="https://azevedev.github.io/BookFinder/" target="_blank" rel="noopener">Live demo<span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/azevedev/BookFinder" target="_blank" rel="noopener">Code<span aria-hidden="true">↗</span></a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://azevedev.github.io/CharityFinder/" target="_blank"
+                            rel="noopener" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/charity-finder.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Early work · 2020</p>
+                            <h3><a href="https://azevedev.github.io/CharityFinder/" target="_blank" rel="noopener">Charity Finder</a></h3>
+                            <p class="card__desc">Find charities around the world. Search for an organisation, narrow
+                                the results with a few filters, then go straight to the charity's own page to donate
+                                or share it.</p>
+                            <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
+                            <p class="card__links">
+                                <a href="https://azevedev.github.io/CharityFinder/" target="_blank" rel="noopener">Live demo<span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/azevedev/CharityFinder" target="_blank" rel="noopener">Code<span aria-hidden="true">↗</span></a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card reveal">
+                        <a class="card__shot" href="https://azevedev.github.io/PomodoroClock/" target="_blank"
+                            rel="noopener" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/projects/pomodoro.jpg" width="1200" height="750" loading="lazy"
+                                decoding="async" alt="">
+                        </a>
+                        <div class="card__body">
+                            <p class="card__tag">Early work · 2020</p>
+                            <h3><a href="https://azevedev.github.io/PomodoroClock/" target="_blank" rel="noopener">Pomodoro Clock</a></h3>
+                            <p class="card__desc">A timer for focus sessions. Start, stop, and nothing else on the
+                                screen competing for your attention.</p>
+                            <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
+                            <p class="card__links">
+                                <a href="https://azevedev.github.io/PomodoroClock/" target="_blank" rel="noopener">Live demo<span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/azevedev/PomodoroClock" target="_blank" rel="noopener">Code<span aria-hidden="true">↗</span></a>
+                            </p>
+                        </div>
+                    </article>
+
                 </div>
 
-                <div class="section hidden proj">
-                    <div class="proj-header p-img1">
-                    </div>
-                    <div class="proj-body">
-                        <p><b>Diarix</b></p>
-                        <hr style="width: 100%;">
-                        <div class="txt">
-                            <p>A website that connects people to working diarist. </br>I don't own the code!</p>
-                        </div>
-                        <div class="pj-link">
-                            <a target="_blank" href="#" class="link-disabled">
-                                <img src="https://img.icons8.com/material/32/444444/console.png" /> No Code
-                            </a>
-                            <a target="_blank" href="https://www.diarix.com.br/" style="color: #B70F14;">
-                                <img class="normal" src="https://img.icons8.com/material-sharp/32/B70F14/youtube-live.png" />
-                                <img class="hover" src="https://img.icons8.com/material-sharp/32/FFC636/youtube-live.png" />Live App
-                            </a>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-
-                <div class="section hidden proj">
-                    <div class="proj-header p-img2">
-                    </div>
-                    <div class="proj-body">
-                        <p><b>Sublime</b></p>
-                        <hr style="width: 100%;">
-                        <div class="txt">
-                            <p>A website for students improve their writing skills. </br>I don't own the code!</p>
-                        </div>
-                        <div class="pj-link">
-                            <a target="_blank" href="#" class="link-disabled">
-                                <img src="https://img.icons8.com/material/32/444444/console.png" /> No Code
-                            </a>
-                            <a target="_blank" href="http://www.redacaosublime.com.br/" style="color: #B70F14;">
-                                <img class="normal" src="https://img.icons8.com/material-sharp/32/B70F14/youtube-live.png" />
-                                <img class="hover" src="https://img.icons8.com/material-sharp/32/FFC636/youtube-live.png" />Live App
-                            </a>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-
-                <div class="section hidden proj">
-                    <div class="proj-header p-img3">
-                    </div>
-                    <div class="proj-body">
-                        <p><b>Pomodoro Clock</b></p>
-                        <hr style="width: 100%;">
-                        <div class="txt">
-                            <p>A simple app to help folks manage/monitor their productivity.</p>
-                        </div>
-                        <div class="pj-link">
-                            <a target="_blank" href="https://github.com/azevedev/PomodoroClock">
-                                <img class="normal" src="https://img.icons8.com/material/32/ffffff/console.png" />
-                                <img class="hover" src="https://img.icons8.com/material/32/FFC636/console.png" />Code
-                            </a>
-                            <a target="_blank" href="https://azevedev.github.io/PomodoroClock/" style="color: #B70F14;">
-                                <img class="normal" src="https://img.icons8.com/material-sharp/32/B70F14/youtube-live.png" />
-                                <img class="hover" src="https://img.icons8.com/material-sharp/32/FFC636/youtube-live.png" />Live Demo
-                            </a>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-
-                <div class="section hidden proj">
-                    <div class="proj-header p-img4">
-                    </div>
-                    <div class="proj-body">
-                        <p><b>FCAW</b></p>
-                        <hr style="width: 100%;">
-                        <div class="txt">
-                            <p>Find Charities Around the World: just make a simple search and you're good to go.</p>
-                        </div>
-                        <div class="pj-link">
-                            <a target="_blank" href="https://github.com/azevedev/CharityFinder">
-                                <img class="normal" src="https://img.icons8.com/material/32/ffffff/console.png" />
-                                <img class="hover" src="https://img.icons8.com/material/32/FFC636/console.png" />Code
-                            </a>
-                            <a target="_blank" href="https://azevedev.github.io/CharityFinder/" style="color: #B70F14;">
-                                <img class="normal" src="https://img.icons8.com/material-sharp/32/B70F14/youtube-live.png" />
-                                <img class="hover" src="https://img.icons8.com/material-sharp/32/FFC636/youtube-live.png" />Live Demo
-                            </a>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-
-                <div class="section hidden proj">
-                    <div class="proj-header p-img5">
-                    </div>
-                    <div class="proj-body">
-                        <p><b>Book Finder</b></p>
-                        <hr style="width: 100%;">
-                        <div class="txt">
-                            <p>Want to read something? We got you <i>covered.</i> Just fill some boxes and have fun reading.</p>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://github.com/azevedev/BookFinder">
-                                <img class="normal" src="https://img.icons8.com/material/32/ffffff/console.png" />
-                                <img class="hover" src="https://img.icons8.com/material/32/FFC636/console.png" />Code
-                            </a>
-                            <a target="_blank" href="https://azevedev.github.io/BookFinder/" style="color: #B70F14;">
-                                <img class="normal" src="https://img.icons8.com/material-sharp/32/B70F14/youtube-live.png" />
-                                <img class="hover" src="https://img.icons8.com/material-sharp/32/FFC636/youtube-live.png" />Live Demo
-                            </a>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <!-- <div class="break"></div> -->
-                <div class="section hidden proj">
-                    <div class="proj-header p-img6">
-                    </div>
-                    <div class="proj-body">
-                        <p><b>Twitter Bot</b></p>
-                        <hr style="width: 100%;">
-                        <div class="txt">
-                            <p>A simple bot that translates iconic Brazilian music into English and post them as Tweets.</p>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://github.com/azevedev/TweeterBotPT-Songs">
-                                <img class="normal" src="https://img.icons8.com/material/32/ffffff/console.png" />
-                                <img class="hover" src="https://img.icons8.com/material/32/FFC636/console.png" />Code
-                            </a>
-                            <a target="_blank" href="https://twitter.com/bot_pt_song" style="color: #B70F14;">
-                                <img class="normal" src="https://img.icons8.com/material-sharp/32/B70F14/youtube-live.png" />
-                                <img class="hover" src="https://img.icons8.com/material-sharp/32/FFC636/youtube-live.png" /> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-
+                <h3 class="sub-head reveal">Also on GitHub</h3>
+                <ul class="repos reveal">
+                    <li>
+                        <a href="https://github.com/azevedev/jury-duty" target="_blank" rel="noopener">
+                            <span class="repos__name" data-scramble>jury-duty</span>
+                            <span class="repos__desc">Real-time Socket.IO quiz: can a room full of people tell AI content from human?</span>
+                            <span class="repos__lang">JavaScript</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/azevedev/boilerplate-wasp" target="_blank" rel="noopener">
+                            <span class="repos__name" data-scramble>boilerplate-wasp</span>
+                            <span class="repos__desc">An Open SaaS starter, trimmed down so a new SaaS idea takes an evening instead of a week.</span>
+                            <span class="repos__lang">TypeScript</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://conv-isaac-raquel.vercel.app/" target="_blank" rel="noopener">
+                            <span class="repos__name" data-scramble>conv-isaac-raquel</span>
+                            <span class="repos__desc">A wedding invitation as a small Vue app, with RSVP, directions and a gift list.</span>
+                            <span class="repos__lang">Vue</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/azevedev/Go-mail" target="_blank" rel="noopener">
+                            <span class="repos__name" data-scramble>Go-mail</span>
+                            <span class="repos__desc">A small mail web server in Go, written to find out how Go feels under load.</span>
+                            <span class="repos__lang">Go</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/azevedev/linksuspeito" target="_blank" rel="noopener">
+                            <span class="repos__name" data-scramble>linksuspeito</span>
+                            <span class="repos__desc">A generator for extremely suspicious-looking links, plus the Rails API behind it.</span>
+                            <span class="repos__lang">Vue · Ruby</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/azevedev?tab=repositories" target="_blank" rel="noopener">
+                            <span class="repos__name" data-scramble>54 public repos</span>
+                            <span class="repos__desc">Games, APIs, browser extensions, a Chrome dark-theme hack, uni coursework and a pile of half-finished experiments.</span>
+                            <span class="repos__lang">All of it</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <br>
-            <br>
-            <br>
         </section>
 
-        <section id="skills" class="section hidden">
-            <div class="sec-title style2">Skills</div>
-            <br>
-            <br>
-            <div class="things">
-                <div class="things-topic">
-                    <br> tecnologies
-                    <hr style="border: 1px solid #888;">
-                </div>
-                <div class="section hidden neo-comp">
-                    <div>
-                        <img src="assets/img/htmlcssjs.png" width="80px" alt="">
-                        <p>HTML, CSS, JS</p>
-                    </div>
-                    <div class="php-img">
-                        <img src="assets/img/php.png" alt="">
-                        <p>PHP</p>
-                    </div>
-                    <div class="ruby-img">
-                        <img src="assets/img/ruby.png" alt="">
-                        <p>Ruby</p>
-                    </div>
-                </div>
-                <div class="section hidden things-topic">
-                    <br> frameworks
-                    <hr style="border: 1px solid #888;">
-                </div>
-                <div class="section hidden neo-comp">
-                    <div class="frameworks-img">
-                        <img src="assets/img/laravel.png" alt=" " style="border-radius: 50%;">
-                        <p>Laravel</p>
-                    </div>
-                    <div class="frameworks-img">
-                        <img src="assets/img/rails.png" alt=" " style="border-radius: 50%;">
-                        <p>Ruby on Rails</p>
-                    </div>
-                </div>
+        <!-- ─────────────────────────────  EXPERIENCE  ───────────────────────────── -->
+        <section id="experience" class="section">
+            <div class="shell">
+                <header class="sec-head reveal">
+                    <h2>Experience</h2>
+                    <p class="sec-note">Nine roles, 2017 → now. Most recent first.</p>
+                </header>
+
+                <ol class="ledger">
+
+                    <li class="role reveal is-current">
+                        <div class="role__when">
+                            <time datetime="2025-10">Oct 2025</time>
+                            <span class="role__dash" aria-hidden="true"></span>
+                            <span class="role__now">Present</span>
+                        </div>
+                        <div class="role__what">
+                            <h3>Senior Development Manager <span class="at">at</span> <b>H&amp;W Publishing</b></h3>
+                            <p>Leading a cross-functional team of six across several internal products, with my hands
+                                still in the commerce architecture.</p>
+                            <ul>
+                                <li>Architect the integrations between payment gateways, checkout, affiliate fee
+                                    distribution and logistics providers.</li>
+                                <li>Built a Continuous Delivery culture with the team. Shorter feedback loops, fewer
+                                    surprises at release.</li>
+                                <li>Work directly with technical stakeholders to take friction out of the delivery
+                                    pipeline.</li>
+                            </ul>
+                            <p class="stack"><span>Team leadership</span><span>Payments</span><span>Checkout</span><span>Continuous Delivery</span></p>
+                        </div>
+                    </li>
+
+                    <li class="role reveal">
+                        <div class="role__when">
+                            <time datetime="2024-04">Apr 2024</time>
+                            <span class="role__dash" aria-hidden="true"></span>
+                            <time datetime="2025-09">Sep 2025</time>
+                        </div>
+                        <div class="role__what">
+                            <h3>Senior Full-Stack Developer <span class="at">at</span> <b>Ecosys Auto</b></h3>
+                            <p>A white-label store-management ecosystem for car dealerships: finance, inventory,
+                                marketing, ads and CRM, split across microservices.</p>
+                            <ul>
+                                <li>Designed and owned the end-to-end CRM module, from schema to interface.</li>
+                                <li>Built the WhatsApp API integration that automates customer communication for every
+                                    dealership on the platform.</li>
+                                <li>Kept the Nuxt 3 front-end and the Laravel services agreeing on their contracts.</li>
+                            </ul>
+                            <p class="stack"><span>Laravel</span><span>Nuxt 3</span><span>Microservices</span><span>PostgreSQL</span><span>WhatsApp API</span></p>
+                        </div>
+                    </li>
+
+                    <li class="role reveal">
+                        <div class="role__when">
+                            <time datetime="2023-03">Mar 2023</time>
+                            <span class="role__dash" aria-hidden="true"></span>
+                            <time datetime="2024-03">Mar 2024</time>
+                        </div>
+                        <div class="role__what">
+                            <h3>Mobile &amp; Back-end Developer <span class="at">at</span> <b>FitLab</b></h3>
+                            <p>A Rails monolith with a React Native app on top. I ran the iOS side and took on the
+                                Android-specific integrations.</p>
+                            <ul>
+                                <li>Engineered a high-availability queues module for background processing.</li>
+                                <li>Cut back-end response times and rewrote system documentation that had gone stale.</li>
+                            </ul>
+                            <p class="stack"><span>Ruby on Rails</span><span>React Native</span><span>iOS</span><span>Background jobs</span></p>
+                        </div>
+                    </li>
+
+                    <li class="role reveal">
+                        <div class="role__when">
+                            <time datetime="2022-05">May 2022</time>
+                            <span class="role__dash" aria-hidden="true"></span>
+                            <time datetime="2023-02">Feb 2023</time>
+                        </div>
+                        <div class="role__what">
+                            <h3>Full-Stack Developer <span class="at">at</span> <b>Zehta</b></h3>
+                            <p>Consultancy for a software house in Brasília. A new client codebase every few months, in
+                                whatever stack it happened to be written in.</p>
+                            <ul>
+                                <li>Shipped production features across Laravel/Livewire, React, Vue and Python/Flask.</li>
+                                <li>Got fast at reading someone else's architecture and handing it back in better
+                                    shape.</li>
+                            </ul>
+                            <p class="stack"><span>Laravel</span><span>Livewire</span><span>React</span><span>Vue.js</span><span>Python</span><span>Flask</span><span>Tailwind</span></p>
+                        </div>
+                    </li>
+
+                    <li class="role reveal">
+                        <div class="role__when">
+                            <time datetime="2021-01">Jan 2021</time>
+                            <span class="role__dash" aria-hidden="true"></span>
+                            <time datetime="2022-04">Apr 2022</time>
+                        </div>
+                        <div class="role__what">
+                            <h3>Full-Stack Developer <span class="at">at</span> <b>ShipSmart</b></h3>
+                            <p>Cross-border logistics for global brands. This is the part of e-commerce where a bad
+                                integration means a package sits in customs.</p>
+                            <ul>
+                                <li>Built the DHL API integration behind shipment tracking.</li>
+                                <li>Led the migration of legacy data catalogs into the modern system.</li>
+                                <li>Built an internal ticketing platform from scratch for the operations team.</li>
+                            </ul>
+                            <p class="stack"><span>Laravel</span><span>Vue.js</span><span>Tailwind</span><span>Microservices</span><span>DHL API</span></p>
+                        </div>
+                    </li>
+
+                    <li class="role reveal">
+                        <div class="role__when">
+                            <time datetime="2020-11">Nov 2020</time>
+                            <span class="role__dash" aria-hidden="true"></span>
+                            <time datetime="2020-12">Dec 2020</time>
+                        </div>
+                        <div class="role__what">
+                            <h3>Developer <span class="at">at</span> <b>Inteligeo</b> <span class="org-note">· Brazilian Federal Police Dept.</span></h3>
+                            <ul>
+                                <li>Built a heat-map visualisation tool wired into government APIs and Google Earth.</li>
+                                <li>Reworked the mobile experience for field agents, who then actually used it.</li>
+                            </ul>
+                            <p class="stack"><span>Vue.js</span><span>PHP</span><span>Node.js</span><span>Google Earth</span></p>
+                        </div>
+                    </li>
+
+                    <li class="role reveal">
+                        <div class="role__when">
+                            <time datetime="2019-06">Jun 2019</time>
+                            <span class="role__dash" aria-hidden="true"></span>
+                            <time datetime="2020-11">Nov 2020</time>
+                        </div>
+                        <div class="role__what">
+                            <h3>Full-Stack Developer <span class="at">at</span> <b>Diarix</b></h3>
+                            <p>A marketplace connecting households to working diarists. My first taste of owning a
+                                product end to end.</p>
+                            <ul>
+                                <li>Introduced Domain-Driven Design inside the monolith so the business rules stopped
+                                    living in controllers.</li>
+                                <li>Co-designed the web and mobile interfaces; time-to-purchase dropped noticeably
+                                    afterwards.</li>
+                            </ul>
+                            <p class="stack"><span>Laravel</span><span>Vue.js</span><span>Ionic</span><span>DDD</span></p>
+                        </div>
+                    </li>
+
+                    <li class="role reveal">
+                        <div class="role__when">
+                            <time datetime="2018-10">Oct 2018</time>
+                        </div>
+                        <div class="role__what">
+                            <h3>Hackathon <span class="at">at</span> <b>NASA Space Apps Challenge</b></h3>
+                            <ul>
+                                <li>Led prototyping and mobile development for our team's app.</li>
+                                <li>Placed 11th of 50 qualifying teams in the finals.</li>
+                            </ul>
+                            <p class="stack"><span>React Native</span><span>Python</span></p>
+                        </div>
+                    </li>
+
+                    <li class="role reveal">
+                        <div class="role__when">
+                            <time datetime="2017-08">Aug 2017</time>
+                            <span class="role__dash" aria-hidden="true"></span>
+                            <time datetime="2019-05">May 2019</time>
+                        </div>
+                        <div class="role__what">
+                            <h3>Web &amp; Mobile Developer <span class="at">at</span> <b>CJR</b> <span class="org-note">· Junior Company, UnB</span></h3>
+                            <ul>
+                                <li>Web projects for a range of clients, mostly small scope with a few that were not.</li>
+                                <li>Helped run the HR side too: talent acquisition and performance reviews.</li>
+                            </ul>
+                            <p class="stack"><span>Ruby on Rails</span><span>React Native</span><span>TypeScript</span></p>
+                        </div>
+                    </li>
+
+                </ol>
             </div>
-            <br>
-            <br>
-            <br>
         </section>
 
+        <!-- ───────────────────────────────  SKILLS  ────────────────────────────── -->
+        <section id="skills" class="section">
+            <div class="shell">
+                <header class="sec-head reveal">
+                    <h2>Skills</h2>
+                    <p class="sec-note">Years actually shipped, rather than a wall of logos.</p>
+                </header>
 
-        <section id="about">
-            <div class="sec-title style3">A little about me</div>
-            <br>
-            <br>
-            <p>
-                I am from Brazil 🇧🇷, finishing a Computer Science degree on the <a href="http://www.unb.br/ " target="_blank">University of Brasilia</a>.
-                </br>
-                </br>
-                I really like to automate things. Making systems easier to use/operate is my jam.
-                </br>
-                </br>
-                I am searching for a ocupation that helps me develop my professional carrier as a Web Developer.
+                <p class="scale-legend reveal" aria-hidden="true">
+                    <span>0</span><span class="scale-legend__rule"></span><span>8 yrs</span>
+                </p>
+
+                <div class="skills">
+
+                    <section class="skillset reveal">
+                        <h3>Core</h3>
+                        <ul>
+                            <li style="--y:7"><span>HTML &amp; CSS3</span><i></i><b class="num" data-to="7">7</b></li>
+                            <li style="--y:6"><span>JavaScript &amp; TypeScript</span><i></i><b class="num" data-to="6">6</b></li>
+                            <li style="--y:5"><span>Node.js</span><i></i><b class="num" data-to="5">5</b></li>
+                            <li style="--y:4"><span>Python</span><i></i><b class="num" data-to="4">4</b></li>
+                        </ul>
+                    </section>
+
+                    <section class="skillset reveal">
+                        <h3>Back-end</h3>
+                        <ul>
+                            <li style="--y:6"><span>Ruby on Rails</span><i></i><b class="num" data-to="6">6</b></li>
+                            <li style="--y:5"><span>Laravel &amp; PHP</span><i></i><b class="num" data-to="5">5</b></li>
+                            <li style="--y:3"><span>NestJS</span><i></i><b class="num" data-to="3">3</b></li>
+                            <li style="--y:2"><span>Livewire</span><i></i><b class="num" data-to="2">2</b></li>
+                            <li style="--y:2"><span>Flask</span><i></i><b class="num" data-to="2">2</b></li>
+                        </ul>
+                    </section>
+
+                    <section class="skillset reveal">
+                        <h3>Front-end &amp; mobile</h3>
+                        <ul>
+                            <li style="--y:5"><span>Vue.js</span><i></i><b class="num" data-to="5">5</b></li>
+                            <li style="--y:3"><span>React</span><i></i><b class="num" data-to="3">3</b></li>
+                            <li style="--y:3"><span>Nuxt 3 &amp; Next.js</span><i></i><b class="num" data-to="3">3</b></li>
+                            <li style="--y:3"><span>React Native &amp; Expo</span><i></i><b class="num" data-to="3">3</b></li>
+                        </ul>
+                    </section>
+
+                    <section class="skillset reveal">
+                        <h3>Data &amp; infrastructure</h3>
+                        <ul>
+                            <li style="--y:5"><span>PostgreSQL · MySQL · Mongo</span><i></i><b class="num" data-to="5">5</b></li>
+                            <li style="--y:4"><span>Docker &amp; CI/CD</span><i></i><b class="num" data-to="4">4</b></li>
+                            <li style="--y:3"><span>AWS · S3, EC2, RDS</span><i></i><b class="num" data-to="3">3</b></li>
+                            <li style="--y:2"><span>DevOps &amp; infra</span><i></i><b class="num" data-to="2">2</b></li>
+                            <li style="--y:1"><span>Redis &amp; Meilisearch</span><i></i><b class="num" data-to="1">1</b></li>
+                        </ul>
+                    </section>
+
+                    <section class="skillset reveal">
+                        <h3>How I work</h3>
+                        <ul>
+                            <li style="--y:5"><span>Unit testing</span><i></i><b class="num" data-to="5">5</b></li>
+                            <li style="--y:2"><span>TDD · ESLint · Husky · PHPStan</span><i></i><b class="num" data-to="2">2</b></li>
+                        </ul>
+                        <p class="stack stack--wide">
+                            <span>Clean Architecture</span><span>DDD</span><span>Hexagonal</span><span>MVC</span><span>Microservices</span><span>Monolith</span><span>Serverless</span>
+                        </p>
+                    </section>
+
+                    <section class="skillset reveal">
+                        <h3>Education</h3>
+                        <dl class="edu">
+                            <div>
+                                <dt>BSc Computer Science</dt>
+                                <dd>University of Brasília (UnB) · 2021 → late 2026</dd>
+                            </div>
+                            <div>
+                                <dt>Technical Program, Information Technology</dt>
+                                <dd>Federal Institute of Piauí (IFPI) · 2018 → 2020</dd>
+                            </div>
+                            <div>
+                                <dt>Languages</dt>
+                                <dd>Portuguese (native) · English (highly proficient)</dd>
+                            </div>
+                        </dl>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ───────────────────────────────  ABOUT  ─────────────────────────────── -->
+        <section id="about" class="section section--about">
+            <div class="shell about">
+                <header class="sec-head reveal">
+                    <h2>About</h2>
+                    <p class="sec-note">The short version.</p>
+                </header>
+
+                <div class="about__grid">
+                    <div class="about__text reveal">
+                        <p class="about__open">I started writing code for other people at nineteen, in a student-run
+                            company where nobody was going to fix my mistakes for me.</p>
+                        <p>That turned out to be the right way to learn. Eight years later I've worked through
+                            marketplaces, logistics, fitness apps, a consultancy, a government department and now
+                            publishing, and the same thing keeps pulling me in: I like the systems nobody posts
+                            screenshots of. Queues that don't drop jobs, integrations that fail loudly rather than
+                            quietly, migrations that actually finish.</p>
+                        <p>These days I lead a team of six, which mostly means I spend my time making sure other
+                            people's work isn't blocked. I still write code, still care about clean architecture and
+                            test coverage, and still think Continuous Delivery is worth the argument it sometimes
+                            takes to get there.</p>
+                        <p>I'm finishing a Computer Science degree at the University of Brasília, and right now most of
+                            my learning time goes into system architecture and leadership. Outside the terminal I play
+                            drums, badly and loudly.</p>
+                    </div>
+
+                    <aside class="about__side reveal">
+                        <img class="about__face" src="assets/img/avatar-64.png" width="64" height="64" alt="" aria-hidden="true">
+                        <dl class="about__meta">
+                            <div><dt>Based in</dt><dd>Brasília, Brazil</dd></div>
+                            <div><dt>Working hours</dt><dd>UTC−3, flexible</dd></div>
+                            <div><dt>Preference</dt><dd>Remote, collaborative teams</dd></div>
+                            <div><dt>Currently</dt><dd>System architecture, leadership, AI in production</dd></div>
+                            <div><dt>Fun fact</dt><dd>I play the drums 🥁</dd></div>
+                        </dl>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ──────────────────────────────  CONTACT  ────────────────────────────── -->
+        <section id="contact" class="section section--contact">
+            <div class="shell">
+                <header class="sec-head reveal">
+                    <h2>Contact</h2>
+                    <p class="sec-note">Hiring, or just want to argue about architecture?</p>
+                </header>
+
+                <p class="contact__pitch reveal">
+                    I'm open to senior and lead roles, remote-first.
+                    <a href="mailto:azevedev@gmail.com">Send me an email</a>, I answer every one.
+                </p>
+
+                <div class="cta reveal">
+                    <a class="btn btn--solid magnet" href="mailto:azevedev@gmail.com">Email me</a>
+                    <a class="btn magnet" href="assets/matheus-azevedo-cv.pdf" download>Download CV<span class="btn__meta">PDF</span></a>
+                </div>
+
+                <ul class="channels reveal">
+                    <li>
+                        <a href="mailto:azevedev@gmail.com">
+                            <span class="channels__k">Email</span>
+                            <span class="channels__v">azevedev@gmail.com</span>
+                        </a>
+                        <button class="channels__copy" type="button" data-copy="azevedev@gmail.com"
+                            aria-label="Copy email address">Copy</button>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/azevedomath/" target="_blank" rel="noopener">
+                            <span class="channels__k">LinkedIn</span>
+                            <span class="channels__v">in/azevedomath<span aria-hidden="true">↗</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/azevedev" target="_blank" rel="noopener">
+                            <span class="channels__k">GitHub</span>
+                            <span class="channels__v">@azevedev<span aria-hidden="true">↗</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+5561991088699">
+                            <span class="channels__k">Phone</span>
+                            <span class="channels__v">+55 (61) 9 9108-8699</span>
+                        </a>
+                        <button class="channels__copy" type="button" data-copy="+5561991088699"
+                            aria-label="Copy phone number">Copy</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="foot">
+        <div class="shell foot__in">
+            <p>© <span id="year">2026</span> Matheus Azevedo</p>
+            <p class="foot__keys">
+                <kbd>T</kbd> theme · <kbd>1</kbd>…<kbd>5</kbd> sections · <kbd>G</kbd> top
             </p>
-            <br>
-            <br>
-            <br>
-        </section>
+            <p><a href="#top" class="foot__up">Back to top<span aria-hidden="true"> ↑</span></a></p>
+            <p class="foot__built">Hand-written HTML, CSS and JavaScript. It ships as static files with nothing
+                tracking you.</p>
+        </div>
+    </footer>
 
-        <section id="contact">
-            <div class="sec-title style4 ">Get in touch</div>
-            <br>
-            <br>
-            <br>
-            <div class="socials ">
-                <a href="https://github.com/azevedev" target="_blank">
-                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png " />
-                </a>
-                <!-- github.com/azevedev -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-                <a href="mailto:azevedev@gmail.com" class="dark">
-                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/new-post.png " />
-                </a>
-                <!-- azevedev@gmail.com -->
-
-
-
-                <a href="tel:61991088699" class="dark">
-                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/phone.png " />
-                </a>
-
-                <!-- linkedin.com/in/azevedev -->
-                <a href="https://linkedin.com/in/azevedev" target="_blank">
-                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin.png " />
-                </a>
-                <!-- linkedin.com/in/azevedev -->
-
-            </div>
-            <br>
-            <br>
-            <br>
-        </section>
-    </div>
-    <script src="assets/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mailgo@0.9.15/dist/mailgo.min.js"></script>
+    <script src="assets/app.js" defer></script>
 </body>
 
 </html>

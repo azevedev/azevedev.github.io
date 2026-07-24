@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- Source for assets/img/og-card.png. Render at 1200x630 and re-export after any identity change. -->
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <title>OG card source</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body {
+            margin: 0;
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+        }
+
+        .og {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 64px;
+            width: 1200px;
+            height: 630px;
+            padding: 0 72px;
+            background: var(--bg);
+        }
+
+        .og__dots {
+            position: absolute;
+            inset: 0;
+            color: var(--line-2);
+            background-image: radial-gradient(currentColor .75px, transparent .75px);
+            background-size: 28px 28px;
+            -webkit-mask-image: linear-gradient(160deg, #000 0%, transparent 72%);
+            mask-image: linear-gradient(160deg, #000 0%, transparent 72%);
+        }
+
+        .og__copy {
+            position: relative;
+        }
+
+        .og__eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--tx-3);
+            font-family: var(--f-mono);
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: .16em;
+        }
+
+        .og__eyebrow i {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+        }
+
+        .og h1 {
+            margin: 26px 0 0;
+            color: var(--tx);
+            font-family: var(--f-display);
+            font-size: 82px;
+            font-weight: 800;
+            line-height: .94;
+            letter-spacing: -.04em;
+        }
+
+        .og h1 em {
+            font-style: normal;
+            color: var(--accent-tx);
+            background: var(--accent);
+            padding: 0 .06em;
+            margin: 0 -.02em;
+        }
+
+        .og__sub {
+            max-width: 30ch;
+            margin-top: 26px;
+            color: var(--tx-2);
+            font-family: var(--f-body);
+            font-size: 23px;
+            line-height: 1.5;
+        }
+
+        .og__strip {
+            display: flex;
+            gap: 0;
+            margin-top: 38px;
+            border: 1px solid var(--line);
+            background: var(--line);
+            width: max-content;
+        }
+
+        .og__strip span {
+            padding: 12px 18px;
+            background: var(--bg);
+            color: var(--tx-3);
+            font-family: var(--f-mono);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+        }
+
+        .og__strip span+span {
+            margin-left: 1px;
+        }
+
+        .og__face {
+            position: relative;
+        }
+
+        .og__face .window {
+            box-shadow: 14px 14px 0 rgba(0, 0, 0, .4);
+        }
+
+        .og__face .window__bar {
+            padding: 10px 14px;
+            font-size: 13px;
+        }
+
+        .og__face .window__body {
+            padding: 16px;
+        }
+
+        .og__face img {
+            display: block;
+            width: 300px;
+            height: 300px;
+            image-rendering: pixelated;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="og">
+        <div class="og__dots"></div>
+
+        <div class="og__copy">
+            <p class="og__eyebrow"><i></i> Matheus Azevedo · Brasília, Brazil</p>
+            <h1>I make the<br>unglamorous<br>parts <em>work</em>.</h1>
+            <p class="og__sub">Senior software developer. Payments, checkout, logistics and CRM: eight years of the
+                plumbing a business runs on.</p>
+            <p class="og__strip">
+                <span>Laravel</span><span>Rails</span><span>Vue &amp; Nuxt</span><span>Node</span><span>AWS</span>
+            </p>
+        </div>
+
+        <figure class="og__face">
+            <div class="window">
+                <div class="window__bar">
+                    <span>azevedev.png</span>
+                    <span>64 × 64</span>
+                </div>
+                <div class="window__body">
+                    <img src="assets/img/avatar-64.png" alt="">
+                </div>
+            </div>
+        </figure>
+    </div>
+</body>
+
+</html>
