@@ -757,9 +757,13 @@ figcaption,
 
 .portrait__canvas {
     position: absolute;
-    inset: .75rem;
-    width: auto;
+    top: .75rem;
+    left: .75rem;
+    /* A canvas is a replaced element: `inset` alone leaves it at its intrinsic
+       64×64 instead of stretching. Size it off the padding box to match the img. */
+    width: calc(100% - 1.5rem);
     height: auto;
+    aspect-ratio: 1;
     image-rendering: pixelated;
 }
 
