@@ -1,0 +1,3 @@
+# Browser-automation scratch: screenshots, page snapshots and console logs
+# written while checking the site locally. None of it is part of the build.
+.playwright-mcp/

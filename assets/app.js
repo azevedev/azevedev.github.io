@@ -30,6 +30,11 @@
     /* ------------------------------------------------------------- theme -- */
 
     var themeBtn = document.getElementById('theme-toggle');
+    var themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    // The markup ships the light ground; the toggle has to carry the dark one,
+    // because a theme-color meta can key off a media query but not an attribute.
+    var CHROME = { light: '#f7f3ea', dark: '#153243' };
 
     function paintThemeButton() {
         if (!themeBtn) return;
@@ -38,13 +43,19 @@
         themeBtn.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
     }
 
+    function paintChrome() {
+        if (themeMeta) themeMeta.setAttribute('content', CHROME[root.dataset.theme] || CHROME.light);
+    }
+
     function toggleTheme() {
         root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
         try { localStorage.setItem('theme', root.dataset.theme); } catch (e) { /* private mode */ }
         paintThemeButton();
+        paintChrome();
     }
 
     paintThemeButton();
+    paintChrome();
     if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
 
     /* -------------------------------------------------------------- menu -- */

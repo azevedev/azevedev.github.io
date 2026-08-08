@@ -39,71 +39,55 @@
 
 /* --------------------------------------------------------------- tokens -- */
 
-/* Minty Serenity.
-   Deep Space Blue #153243 · Yale Blue #284b63 · Ash Grey #b4b8ab
-   Ivory #f4f9e9 · Parchment #eef0eb. Everything else is a tint or shade of these. */
+/* Bone & Deep Space.
+   Bone #f7f3ea · Linen #f2ede1 · Oat #e6dfd0 · Warm Ash #bbb098
+   Deep Space Blue #153243 · Yale Blue #284b63. Everything else is a tint of these.
+
+   Bone is the ground the page is read on. Deep Space Blue is the ink and the one
+   accent — it earns its weight by being the darkest thing on a warm sheet, so it
+   marks what matters (headings, the filled block, buttons) instead of flooding
+   the page. Dark is the same two families inverted, and is opt-in: the toggle
+   below sets data-theme and nothing else does, so bone is what a visitor lands on. */
 
 :root,
+:root[data-theme='light'] {
+    --bg: #f7f3ea;
+    --bg-2: #f2ede1;
+    --bg-3: #e6dfd0;
+    --bg-blur: rgba(247, 243, 234, .86);
+
+    --tx: #153243;
+    --tx-2: #1e3d51;
+    --tx-3: #4d6d80;
+
+    --line: #ded7c6;
+    --line-2: #bbb098;
+
+    --accent: #153243;
+    --accent-hi: #284b63;
+    --accent-tx: #f7f3ea;
+
+    --shadow: rgba(21, 50, 67, .16);
+}
+
 :root[data-theme='dark'] {
     --bg: #153243;
     --bg-2: #1a3c50;
     --bg-3: #102734;
     --bg-blur: rgba(21, 50, 67, .84);
 
-    --tx: #f4f9e9;
-    --tx-2: #dfe3d9;
-    --tx-3: #93a3a0;
+    --tx: #f7f3ea;
+    --tx-2: #e2dccd;
+    --tx-3: #9aa19b;
 
     --line: #21445a;
     --line-2: #284b63;
 
-    --accent: #b4b8ab;
-    --accent-hi: #cdd1c3;
+    --accent: #c4bba6;
+    --accent-hi: #d8d0be;
     --accent-tx: #153243;
 
     --shadow: rgba(0, 0, 0, .4);
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg: #f4f9e9;
-        --bg-2: #eef0eb;
-        --bg-3: #e2e6da;
-        --bg-blur: rgba(244, 249, 233, .86);
-
-        --tx: #153243;
-        --tx-2: #1e3d51;
-        --tx-3: #4d6d80;
-
-        --line: #d5dbcb;
-        --line-2: #b4b8ab;
-
-        --accent: #284b63;
-        --accent-hi: #153243;
-        --accent-tx: #f4f9e9;
-
-        --shadow: rgba(21, 50, 67, .16);
-    }
-}
-
-:root[data-theme='light'] {
-    --bg: #f4f9e9;
-    --bg-2: #eef0eb;
-    --bg-3: #e2e6da;
-    --bg-blur: rgba(244, 249, 233, .86);
-
-    --tx: #153243;
-    --tx-2: #1e3d51;
-    --tx-3: #4d6d80;
-
-    --line: #d5dbcb;
-    --line-2: #b4b8ab;
-
-    --accent: #284b63;
-    --accent-hi: #153243;
-    --accent-tx: #f4f9e9;
-
-    --shadow: rgba(21, 50, 67, .16);
 }
 
 :root {
