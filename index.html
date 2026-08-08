@@ -73,6 +73,15 @@
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Brasília (UnB)" }
     }
     </script>
+
+    <!-- Analytics (Umami: cookieless, no personal data, so no consent banner).
+         One website covers all of azevedev.github.io; assets/analytics.js
+         stamps site=portfolio on every event. data-domains keeps local
+         development out of the numbers, and DNT is honoured. -->
+    <script defer src="https://cloud.umami.is/script.js"
+            data-website-id="a7daffd3-b63f-476b-80c4-8f9c0dd16e01"
+            data-domains="azevedev.github.io"
+            data-do-not-track="true"></script>
 </head>
 
 <body>
@@ -880,6 +889,7 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="assets/app.js" defer></script>
+    <script src="assets/analytics.js" defer></script>
 </body>
 
 </html>
