@@ -39,38 +39,44 @@
 
 /* --------------------------------------------------------------- tokens -- */
 
-/* Ash & Deep Space.
-   Ash Grey #b4b8ab · Sage #bfc2b7 · Slate Sage #a8ac9f · Lichen #969c8a
-   Deep Space Blue #153243 · Harbour #3d5f72 · Ivory Ash #e7eae0.
+/* Ivory & Ash.
+   Ivory Ash #e7eae0 · Chalk #f0f2ec · Slate Sage #d5d9cc · Lichen #c8ccbf
+   Deep Space Blue #153243 · Harbour #5a7d90 · Ash Grey #b4b8ab.
 
-   Ash Grey is the ground the page is read on — a sheet of grey card rather than
-   paper. Deep Space Blue is the ink and the one accent: the darkest thing on the
-   sheet, so it marks what matters (headings, the filled block, buttons, the
-   stated borders) instead of flooding the page. A mid-tone ground gives muted
-   text less room than a white one, so --tx-3 sits far darker than a light theme
-   would need it: every text token clears 4.5:1 on every surface it can land on,
-   and --line-2 clears 3:1 so a control's edge is a real edge. Dark is the same
-   two families inverted, and is opt-in: the toggle below sets data-theme and
-   nothing else does, so ash is what a visitor lands on. */
+   Ivory Ash is the ground the page is read on. Deep Space Blue is the ink and
+   the primary: headings, buttons, bars, focus rings — anything that has to be
+   seen at a hairline's width. Ash Grey is the mark, and only ever a fill:
+   it sits at 1.66:1 against this ground, which is a highlighter's job, not a
+   signal's, so it goes behind text (the block in the headline, a selection, a
+   struck link) and never becomes text, a rule or a ring. Whatever the mark
+   fills carries --mark-tx on top of it, which clears 6.6:1.
+
+   Dark is the same families with the ground and the ink swapped, and there the
+   mark and the primary coincide — Ash Grey is legible on Deep Space Blue, so
+   it does both jobs. Dark is opt-in: the toggle below sets data-theme and
+   nothing else does, so ivory is what a visitor lands on. */
 
 :root,
 :root[data-theme='light'] {
-    --bg: #b4b8ab;
-    --bg-2: #bfc2b7;
-    --bg-3: #a8ac9f;
-    --bg-blur: rgba(180, 184, 171, .86);
+    --bg: #e7eae0;
+    --bg-2: #f0f2ec;
+    --bg-3: #d5d9cc;
+    --bg-blur: rgba(231, 234, 224, .86);
 
     --tx: #153243;
     --tx-2: #1e3d51;
-    --tx-3: #2b4a5b;
+    --tx-3: #3d5f72;
 
-    --line: #969c8a;
-    --line-2: #3d5f72;
+    --line: #c8ccbf;
+    --line-2: #5a7d90;
 
     --accent: #153243;
     --accent-tx: #e7eae0;
 
-    --shadow: rgba(21, 50, 67, .24);
+    --mark: #b4b8ab;
+    --mark-tx: #153243;
+
+    --shadow: rgba(21, 50, 67, .18);
 }
 
 :root[data-theme='dark'] {
@@ -88,6 +94,9 @@
 
     --accent: #b4b8ab;
     --accent-tx: #153243;
+
+    --mark: #b4b8ab;
+    --mark-tx: #153243;
 
     --shadow: rgba(0, 0, 0, .4);
 }
@@ -177,8 +186,8 @@ button {
 }
 
 ::selection {
-    background: var(--accent);
-    color: var(--accent-tx);
+    background: var(--mark);
+    color: var(--mark-tx);
 }
 
 :focus-visible {
@@ -590,12 +599,12 @@ figcaption,
     animation-delay: .26s;
 }
 
-/* This palette has almost no chroma, so emphasis is carried by inverting value
-   rather than by switching hue. The filled block also suits the pixel idiom. */
+/* This palette has almost no chroma, so emphasis is carried by filling rather
+   than by switching hue. The filled block also suits the pixel idiom. */
 .display em {
     font-style: normal;
-    color: var(--accent-tx);
-    background: var(--accent);
+    color: var(--mark-tx);
+    background: var(--mark);
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     padding: 0 .06em;
@@ -1353,8 +1362,8 @@ figcaption,
 
 .contact__pitch a:hover,
 .contact__pitch a:focus-visible {
-    color: var(--accent-tx);
-    background: var(--accent);
+    color: var(--mark-tx);
+    background: var(--mark);
 }
 
 .channels {

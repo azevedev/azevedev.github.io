@@ -32,9 +32,9 @@
     var themeBtn = document.getElementById('theme-toggle');
     var themeMeta = document.querySelector('meta[name="theme-color"]');
 
-    // The markup ships the ash ground; the toggle has to carry the dark one,
+    // The markup ships the ivory ground; the toggle has to carry the dark one,
     // because a theme-color meta can key off a media query but not an attribute.
-    var CHROME = { light: '#b4b8ab', dark: '#153243' };
+    var CHROME = { light: '#e7eae0', dark: '#153243' };
 
     function paintThemeButton() {
         if (!themeBtn) return;
