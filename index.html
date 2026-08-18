@@ -558,17 +558,21 @@
                         </div>
                         <div class="role__what">
                             <h3>Senior Development Manager <span class="at">at</span> <b>H&amp;W Publishing</b></h3>
-                            <p>Leading a cross-functional team of six across several internal products, with my hands
-                                still in the commerce architecture.</p>
+                            <p>Leading a cross-functional team of six across four internal products, with my hands
+                                still in the commerce architecture and in code review.</p>
                             <ul>
-                                <li>Architect the integrations between payment gateways, checkout, affiliate fee
-                                    distribution and logistics providers.</li>
-                                <li>Built a Continuous Delivery culture with the team. Shorter feedback loops, fewer
-                                    surprises at release.</li>
-                                <li>Work directly with technical stakeholders to take friction out of the delivery
-                                    pipeline.</li>
+                                <li>Own the architecture of the payment path: gateway integrations, checkout,
+                                    affiliate commission distribution and logistics carriers, across five or more
+                                    external providers.</li>
+                                <li>Designed the failure handling for those integrations — retries, idempotent
+                                    operations, reconciliation routines — so a partner outage can't corrupt order or
+                                    commission data.</li>
+                                <li>Introduced Continuous Delivery, taking the team from monthly release windows to
+                                    weekly deploys.</li>
+                                <li>Standardised code review and CI quality gates across teams, cutting recurring
+                                    production incidents by around 30%.</li>
                             </ul>
-                            <p class="stack"><span>Team leadership</span><span>Payments</span><span>Checkout</span><span>Continuous Delivery</span></p>
+                            <p class="stack"><span>Team leadership</span><span>Payments</span><span>Checkout</span><span>Idempotency</span><span>Continuous Delivery</span></p>
                         </div>
                     </li>
 
@@ -580,15 +584,19 @@
                         </div>
                         <div class="role__what">
                             <h3>Senior Full-Stack Developer <span class="at">at</span> <b>Ecosys Auto</b></h3>
-                            <p>A white-label store-management ecosystem for car dealerships: finance, inventory,
-                                marketing, ads and CRM, split across microservices.</p>
+                            <p>A multi-tenant, white-label store-management platform for car dealerships, split into
+                                independently deployable services across six modules: finance, invoicing, inventory,
+                                marketing, ads and CRM.</p>
                             <ul>
-                                <li>Designed and owned the end-to-end CRM module, from schema to interface.</li>
-                                <li>Built the WhatsApp API integration that automates customer communication for every
-                                    dealership on the platform.</li>
-                                <li>Kept the Nuxt 3 front-end and the Laravel services agreeing on their contracts.</li>
+                                <li>Designed and owned the CRM module end to end, from schema to interface.</li>
+                                <li>Built its WhatsApp integration on the Evolution API, automating around 1,000
+                                    messages a month across several tenants and their sellers.</li>
+                                <li>Handled tenant isolation, service-to-service communication and queue-based
+                                    processing, so one slow partner API couldn't block the rest of the platform.</li>
+                                <li>Kept the codebase under PHPStan and unit tests, with code review as a merge
+                                    requirement.</li>
                             </ul>
-                            <p class="stack"><span>Laravel</span><span>Nuxt 3</span><span>Microservices</span><span>PostgreSQL</span><span>WhatsApp API</span></p>
+                            <p class="stack"><span>Laravel</span><span>Nuxt 3</span><span>Microservices</span><span>Multi-tenancy</span><span>PostgreSQL</span><span>WhatsApp API</span></p>
                         </div>
                     </li>
 
@@ -600,11 +608,16 @@
                         </div>
                         <div class="role__what">
                             <h3>Mobile &amp; Back-end Developer <span class="at">at</span> <b>FitLab</b></h3>
-                            <p>A nutrition and meal-planning app: a Rails monolith with a React Native app on top. I
-                                ran the iOS side and took on the Android-specific integrations.</p>
+                            <p>A nutrition and meal-planning app: a Rails monolith with a React Native client, serving
+                                around 300 trainers and nutritionists who each managed 15 to 50 clients of their own.
+                                I ran the iOS side and took on the Android-specific integrations.</p>
                             <ul>
-                                <li>Engineered a high-availability queues module for background processing.</li>
-                                <li>Cut back-end response times and rewrote system documentation that had gone stale.</li>
+                                <li>Engineered a high-availability queues module for background processing, handling
+                                    around 3,000 jobs a day, with retry and failure isolation that cut failed jobs by
+                                    25%.</li>
+                                <li>Brought average API response time down from around 800ms to under 300ms.</li>
+                                <li>Rewrote the service documentation, taking new-developer ramp-up from weeks to
+                                    days.</li>
                             </ul>
                             <p class="stack"><span>Ruby on Rails</span><span>React Native</span><span>iOS</span><span>Background jobs</span></p>
                         </div>
@@ -618,12 +631,15 @@
                         </div>
                         <div class="role__what">
                             <h3>Full-Stack Developer <span class="at">at</span> <b>Zehta</b></h3>
-                            <p>Consultancy for a software house in Brasília. A new client codebase every few months, in
-                                whatever stack it happened to be written in.</p>
+                            <p>Consultancy for a software house in Brasília. A new client codebase every few months,
+                                in whatever stack it happened to be written in.</p>
                             <ul>
-                                <li>Shipped production features across Laravel/Livewire, React, Vue and Python/Flask.</li>
-                                <li>Got fast at reading someone else's architecture and handing it back in better
-                                    shape.</li>
+                                <li>Delivered 12 client projects across Laravel, Livewire, React, Vue.js and
+                                    Python/Flask, moving between stacks as each contract required.</li>
+                                <li>Created a standard prototyping, implementation and deployment workflow that took
+                                    alignment with a client from one or two weeks down to a few days.</li>
+                                <li>Held code standards and test coverage steady across different teams and very
+                                    different legacy conditions.</li>
                             </ul>
                             <p class="stack"><span>Laravel</span><span>Livewire</span><span>React</span><span>Vue.js</span><span>Python</span><span>Flask</span><span>Tailwind</span></p>
                         </div>
@@ -640,9 +656,12 @@
                             <p>Cross-border logistics for global brands. This is the part of e-commerce where a bad
                                 integration means a package sits in customs.</p>
                             <ul>
-                                <li>Built the DHL API integration behind shipment tracking.</li>
-                                <li>Led the migration of legacy data catalogs into the modern system.</li>
-                                <li>Built an internal ticketing platform from scratch for the operations team.</li>
+                                <li>Built the DHL API integration behind shipment tracking, on a Laravel and Vue.js
+                                    microservices architecture covering roughly 5,000 shipments a month.</li>
+                                <li>Led the migration of legacy product catalogs — 135,000 records — into the current
+                                    platform, with no interruption of service.</li>
+                                <li>Delivered an internal ticketing platform from scratch, used daily by more than ten
+                                    support agents, replacing the spreadsheet process it inherited.</li>
                             </ul>
                             <p class="stack"><span>Laravel</span><span>Vue.js</span><span>Tailwind</span><span>Microservices</span><span>DHL API</span></p>
                         </div>
@@ -673,12 +692,16 @@
                         <div class="role__what">
                             <h3>Full-Stack Developer <span class="at">at</span> <b>Diarix</b></h3>
                             <p>A marketplace connecting households to cleaning professionals. My first taste of owning
-                                a product end to end.</p>
+                                a product end to end, and my first production Laravel — eighteen months on the same
+                                codebase.</p>
                             <ul>
-                                <li>Introduced Domain-Driven Design inside the monolith so the business rules stopped
-                                    living in controllers.</li>
-                                <li>Co-designed the web and mobile interfaces; time-to-purchase dropped noticeably
-                                    afterwards.</li>
+                                <li>Structured the Laravel monolith around Domain-Driven Design, keeping the business
+                                    rules out of framework code so the domain could change without breaking the rest
+                                    of the application.</li>
+                                <li>Built and maintained the web and mobile flow in Laravel, Vue.js and Ionic —
+                                    the same journey on both, from one codebase with a single source of truth for the
+                                    rules.</li>
+                                <li>Co-designed the interface; time-to-purchase dropped noticeably afterwards.</li>
                             </ul>
                             <p class="stack"><span>Laravel</span><span>Vue.js</span><span>Ionic</span><span>DDD</span></p>
                         </div>
@@ -707,7 +730,8 @@
                         <div class="role__what">
                             <h3>Web &amp; Mobile Developer <span class="at">at</span> <b>CJR</b> <span class="org-note">· Junior Company, UnB</span></h3>
                             <ul>
-                                <li>Web projects for a range of clients, mostly small scope with a few that were not.</li>
+                                <li>Delivered web and mobile projects for external clients in Ruby on Rails, React
+                                    Native and TypeScript.</li>
                                 <li>Helped run the HR side too: talent acquisition and performance reviews.</li>
                             </ul>
                             <p class="stack"><span>Ruby on Rails</span><span>React Native</span><span>TypeScript</span></p>
