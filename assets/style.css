@@ -39,35 +39,38 @@
 
 /* --------------------------------------------------------------- tokens -- */
 
-/* Bone & Deep Space.
-   Bone #f7f3ea · Linen #f2ede1 · Oat #e6dfd0 · Warm Ash #bbb098
-   Deep Space Blue #153243 · Yale Blue #284b63. Everything else is a tint of these.
+/* Ash & Deep Space.
+   Ash Grey #b4b8ab · Sage #bfc2b7 · Slate Sage #a8ac9f · Lichen #969c8a
+   Deep Space Blue #153243 · Harbour #3d5f72 · Ivory Ash #e7eae0.
 
-   Bone is the ground the page is read on. Deep Space Blue is the ink and the one
-   accent — it earns its weight by being the darkest thing on a warm sheet, so it
-   marks what matters (headings, the filled block, buttons) instead of flooding
-   the page. Dark is the same two families inverted, and is opt-in: the toggle
-   below sets data-theme and nothing else does, so bone is what a visitor lands on. */
+   Ash Grey is the ground the page is read on — a sheet of grey card rather than
+   paper. Deep Space Blue is the ink and the one accent: the darkest thing on the
+   sheet, so it marks what matters (headings, the filled block, buttons, the
+   stated borders) instead of flooding the page. A mid-tone ground gives muted
+   text less room than a white one, so --tx-3 sits far darker than a light theme
+   would need it: every text token clears 4.5:1 on every surface it can land on,
+   and --line-2 clears 3:1 so a control's edge is a real edge. Dark is the same
+   two families inverted, and is opt-in: the toggle below sets data-theme and
+   nothing else does, so ash is what a visitor lands on. */
 
 :root,
 :root[data-theme='light'] {
-    --bg: #f7f3ea;
-    --bg-2: #f2ede1;
-    --bg-3: #e6dfd0;
-    --bg-blur: rgba(247, 243, 234, .86);
+    --bg: #b4b8ab;
+    --bg-2: #bfc2b7;
+    --bg-3: #a8ac9f;
+    --bg-blur: rgba(180, 184, 171, .86);
 
     --tx: #153243;
     --tx-2: #1e3d51;
-    --tx-3: #4d6d80;
+    --tx-3: #2b4a5b;
 
-    --line: #ded7c6;
-    --line-2: #bbb098;
+    --line: #969c8a;
+    --line-2: #3d5f72;
 
     --accent: #153243;
-    --accent-hi: #284b63;
-    --accent-tx: #f7f3ea;
+    --accent-tx: #e7eae0;
 
-    --shadow: rgba(21, 50, 67, .16);
+    --shadow: rgba(21, 50, 67, .24);
 }
 
 :root[data-theme='dark'] {
@@ -76,15 +79,14 @@
     --bg-3: #102734;
     --bg-blur: rgba(21, 50, 67, .84);
 
-    --tx: #f7f3ea;
-    --tx-2: #e2dccd;
-    --tx-3: #9aa19b;
+    --tx: #eef1e8;
+    --tx-2: #dfe3d9;
+    --tx-3: #9fa79b;
 
-    --line: #21445a;
-    --line-2: #284b63;
+    --line: #2a4c62;
+    --line-2: #587f94;
 
-    --accent: #c4bba6;
-    --accent-hi: #d8d0be;
+    --accent: #b4b8ab;
     --accent-tx: #153243;
 
     --shadow: rgba(0, 0, 0, .4);
@@ -514,11 +516,11 @@ figcaption,
 .grid-dots {
     position: absolute;
     inset: 0;
-    color: var(--line-2);
+    color: var(--line);
     background-image: radial-gradient(currentColor .5px, transparent .5px);
     background-size: 1.75rem 1.75rem;
     background-position: 0 calc(var(--par, 0) * 1px);
-    opacity: .7;
+    opacity: .85;
     -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 78%);
     mask-image: linear-gradient(180deg, #000 0%, transparent 78%);
     pointer-events: none;
@@ -662,7 +664,8 @@ figcaption,
 .btn__meta {
     padding-left: .5rem;
     border-left: 1px solid currentColor;
-    opacity: .55;
+    /* dimmed just enough to sit under the label without dropping below 4.5:1 */
+    opacity: .85;
     font-size: .62rem;
 }
 
@@ -753,14 +756,16 @@ figcaption,
 
 .portrait figcaption {
     margin-top: .875rem;
-    color: var(--tx-3);
+    color: var(--tx-2);
     font-size: .68rem;
     line-height: 1.6;
 }
 
+/* the second line is the aside; it steps down in colour rather than in opacity,
+   which would have taken it under 4.5:1 on this ground */
 .portrait figcaption span {
     display: block;
-    opacity: .75;
+    color: var(--tx-3);
 }
 
 /* ------------------------------------------------------------- sections -- */
@@ -1480,7 +1485,6 @@ figcaption,
 .foot__built {
     order: 4;
     flex-basis: 100%;
-    opacity: .7;
 }
 
 .foot__keys kbd {
